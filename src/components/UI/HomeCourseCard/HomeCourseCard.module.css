@@ -1,0 +1,90 @@
+.HomeCourseCard{
+    position: relative;
+    color: #fff;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 30px;
+    margin: 150px;
+    cursor: pointer;
+}
+.HomeCourseCard:hover::before{
+    top: 20px;
+    left: 20px;
+}
+.HomeCourseCard:hover::after{
+    top: 40px;
+    left: 40px;
+}
+.HomeCourseCard::before{
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    opacity: .7;
+    border-radius: 30px;
+    top: 10px;
+    left: 10px;
+    z-index: -1;
+    transition: .4s all;
+}
+.HomeCourseCard::after{
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    opacity: .5;
+    border-radius: 30px;
+    top: 20px;
+    left: 20px;
+    z-index: -2;
+    transition: .4s all;
+}
+.small{
+    width: 500px;
+    height: 150px;
+    font-size: 36px;
+}
+.medium{
+    width: 700px;
+    height: 300px;
+    font-size: 64px;
+}
+.large{
+    width: 800px;
+    height: 400px;
+    font-size: 64px;
+}
+
+/* BLUE-PRESET */
+.blue{
+    background-color: #0077FF;
+}
+.HomeCourseCard[data-color='blue']::before{
+    background-color: #0046DE;
+}
+.HomeCourseCard[data-color='blue']::after{
+    background-color: #0003AF;
+}
+
+/* YELLOW-PRESET */
+.yellow{
+    background-color: #FFCC00;
+}
+.HomeCourseCard[data-color='yellow']::before{
+    background-color: #DEB200;
+}
+.HomeCourseCard[data-color='yellow']::after{
+    background-color: #AF8C00;
+}
+
+.orange{
+    background-color: #FF6200;
+}
+.HomeCourseCard[data-color='orange']::before{
+    background-color: #DE4E00;
+}
+.HomeCourseCard[data-color='orange']::after{
+    background-color: #AF0000;
+}
