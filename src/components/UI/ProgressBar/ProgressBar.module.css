@@ -1,0 +1,41 @@
+.ProgressBarContainer {
+  width: 100%;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+}
+
+.ProgressBar {
+  background-color: #fff;
+  border-radius: 30px;
+  overflow: hidden;
+  border: 2px solid #e0e0e0;
+}
+
+span {
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.ProgressBarProgress {
+  height: 100%;
+  border-radius: 30px;
+  background: linear-gradient(90deg, #4caf50, #8bc34a);
+  transition: width 0.3s ease;
+  min-width: 4px;
+}
+.small {
+  width: 300px;
+  height: 40px;
+}
+.medium {
+  width: 700px;
+  height: 50px;
+}
+.large {
+  width: 800px;
+  height: 60px;
+}
