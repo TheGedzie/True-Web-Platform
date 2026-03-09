@@ -1,0 +1,75 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: inherit;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  outline: none;
+  line-height: 1;
+}
+.animate{
+    box-shadow: 0 0 50px 20px rgba(0, 252, 46, 0.685);
+    animation: primaryAnimate 5s ease-in-out infinite;
+}
+
+/* Размеры */
+.large {
+  border-radius: 25px;
+  padding: 30px 36px;
+  font-size: 30px;
+}
+
+.medium {
+  border-radius: 18px;
+  padding: 18px 20px;
+  font-size: 22px;
+}
+
+.small {
+  border-radius: 12px;
+  padding: 12px 15px;
+  font-size: 14px;
+}
+
+/* Варианты */
+.primary {
+  border: 1px solid #4e8554;
+  background: #46774C;
+  color: white;
+}
+@keyframes primaryAnimate {
+  0%, 100% {
+    box-shadow: 0 0 50px 0 rgba(12, 218, 49, 0.685);
+  }
+  50% {
+    box-shadow: 0 0 50px 20px rgba(12, 218, 49, 0.685);
+  }
+}
+.primary:hover:not(.disabled) {
+  background: #37613c;
+}
+
+/* В процессе */
+.secondary {
+  background: #e5e7eb;
+  color: #374151;
+  border: 1px solid #d1d5db;
+}
+
+.secondary:hover:not(.disabled) {
+  background: #d1d5db;
+}
+
+/* Состояния */
+.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Фокус для доступности */
+.button:focus-visible {
+  outline: 2px solid #003800;
+  outline-offset: 2px;
+}
