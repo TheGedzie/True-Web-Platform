@@ -1,0 +1,51 @@
+.Title {
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    user-select: none;
+}
+
+/* Стилизация размеров */
+.small {
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.medium {
+    font-size: 32px;
+    font-weight: 600;
+}
+
+.large {
+    font-size: 48px;
+    font-weight: 600;
+}
+
+/* Стилизация цветов */
+.white {
+    color: #FFFFFF;
+}
+
+.black {
+    color: #000000;
+}
+
+.green {
+    color: #59FD7C;
+}
+
+.blue {
+    color: #59D9FD;
+}
+
+.purple {
+    color: #BB59FD;
+}
+
+.red {
+    color: #FD595C;
+}
+
+.yellow {
+    color: #FDEA59;
+}
