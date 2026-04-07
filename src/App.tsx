@@ -1,8 +1,13 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom"
+import { Education } from "./pages/Education"
+
 function App() {
   return (
-    <>
-      <h1>Coming soon ...</h1>
-    </>
+   <BrowserRouter>
+    <Routes>
+      <Route path="/education" element={<Education />}/>
+    </Routes>
+   </BrowserRouter>
   )
 }
 
