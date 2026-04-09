@@ -7,6 +7,7 @@ import { HomeCourseCard } from '../../components/UI/HomeCourseCard'
 import { ProgressBar } from '../../components/UI/ProgressBar'
 import { Button } from '../../components/UI/Button'
 import { Modal } from '../../components/UI/Modal'
+import { useNavigate } from 'react-router-dom'
 
 const testData = {
   userName: "TheGedzie",
@@ -20,6 +21,7 @@ interface Course {
 
 export const Education = () => {
 
+  const navigate = useNavigate();
   const [courses, setCourses] = useState<Course[] | null>(null);
   const currentProgress : number = 1;
   const totalProgress : number = 3;
@@ -54,6 +56,7 @@ export const Education = () => {
                   <Title children={`${course.name}`} level={"h3"} size='large' color='white'/>
                   <HomeCourseCard children={`${course.name}`} color ={`${color}`} onClick={() => {
                     console.log(course.id)
+                    navigate(`/education/${course.id}`)
                   }}/>
               </div>
              )
