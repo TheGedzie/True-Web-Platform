@@ -1,0 +1,176 @@
+.PreviewCourse {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0d1f0d 0%, #0a150a 100%);
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+.hero {
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  backdrop-filter: blur(10px);
+}
+
+.hero h1 {
+  max-width: 600px;
+  animation: textGlow 2s ease-in-out infinite;
+}
+
+@keyframes textGlow {
+  0%, 100% {
+    opacity: 0.9;
+    text-shadow: 0 0 20px #59FD7C, 0 0 40px #46774C;
+  }
+  50% {
+    opacity: 1;
+    text-shadow: 0 0 30px #59FD7C, 0 0 60px #59FD7C, 0 0 80px #46774C;
+  }
+}
+
+/* Секция описания */
+.description {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 50px 40px;
+  gap: 40px;
+  align-items: center;
+}
+
+.description h2 {
+  grid-column: 1 / -1;
+  margin-bottom: 20px;
+  font-size: 36px;
+  background: linear-gradient(90deg, #59FD7C, #46774C, #59FD7C);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 0 30px rgba(89, 253, 124, 0.3);
+}
+
+.testVideo {
+  background: linear-gradient(135deg, #1a3a1a, #0d1f0d);
+  border-radius: 20px;
+  padding: 80px 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px dashed #59FD7C;
+  transition: all 0.3s ease;
+  min-height: 250px;
+  box-shadow: 0 0 30px rgba(89, 253, 124, 0.1);
+}
+
+.testVideo:hover {
+  border-color: #59FD7C;
+  transform: scale(1.02);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7), 0 0 40px rgba(89, 253, 124, 0.3);
+  background: linear-gradient(135deg, #1f4a1f, #133013);
+}
+
+.testVideo span {
+  color: #59FD7C;
+  font-size: 24px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  text-shadow: 0 0 20px rgba(89, 253, 124, 0.5);
+}
+
+.descriptionText {
+  color: #d4f5d4;
+  font-size: 18px;
+  line-height: 1.8;
+  padding: 30px;
+  background: linear-gradient(135deg, rgba(70, 119, 76, 0.1), rgba(89, 253, 124, 0.05));
+  border-radius: 20px;
+  border-left: 4px solid #59FD7C;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Секция "Что входит в курс" */
+.intoCourse {
+  background: linear-gradient(135deg, rgba(70, 119, 76, 0.08) 0%, rgba(89, 253, 124, 0.03) 100%);
+  border-radius: 20px;
+  padding: 40px;
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(89, 253, 124, 0.15);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.intoCourse h2 {
+  margin-bottom: 20px;
+  font-size: 32px;
+  color: #fff;
+  text-shadow: 0 0 20px rgba(89, 253, 124, 0.4);
+}
+
+.intoCourse hr {
+  border: none;
+  height: 2px;
+  background: linear-gradient(90deg, #59FD7C, #46774C, transparent);
+  margin: 20px 0 30px 0;
+  box-shadow: 0 0 10px #59FD7C;
+}
+
+.intoCourse p {
+  color: #b8e6b8;
+  font-size: 18px;
+  padding: 15px 20px;
+  margin: 10px 0;
+  background: rgba(70, 119, 76, 0.1);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  cursor: default;
+  border: 1px solid rgba(89, 253, 124, 0.1);
+}
+
+.intoCourse p:hover {
+  background: rgba(89, 253, 124, 0.15);
+  border-color: #59FD7C;
+  color: #fff;
+  transform: translateX(10px);
+  box-shadow: 0 5px 15px rgba(89, 253, 124, 0.2), 0 0 20px rgba(89, 253, 124, 0.1);
+}
+
+/* Адаптив */
+@media (max-width: 968px) {
+  .PreviewCourse {
+    padding: 20px;
+  }
+  
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+    padding: 30px 25px;
+  }
+  
+  .description {
+    grid-template-columns: 1fr;
+  }
+}
+
+.arrow{
+  position: absolute;
+  max-width: 60px;
+  bottom: 100px;
+  animation: arrowAnimate 1.5s ease-in-out infinite;
+}
+@keyframes arrowAnimate {
+  0% {
+    bottom: 100px;
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+  100% {
+    bottom: 30px;
+    opacity: 0;
+  }
+}
