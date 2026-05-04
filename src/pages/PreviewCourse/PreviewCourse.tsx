@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import cls from './previewCourse.module.css'
 import { Title } from '../../components/UI/Title'
 import { Button } from '../../components/UI/Button'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import { getData } from '../../services/api'
 import arrow from '../../assets/arrow.svg'
 interface Course {
@@ -13,6 +13,7 @@ interface Course {
 }
 
 export const PreviewCourse = () => {
+    const navigate = useNavigate()
     const [course, setCourse] = useState<Course[] | null>(null);
     const { id } = useParams();
       useEffect(() => {
@@ -26,7 +27,7 @@ export const PreviewCourse = () => {
     <div className={cls.PreviewCourse}>
         <div className={cls.hero}>
             <Title children={course?.name} color='green' size='large' level='h1'/>
-            <Button children='Начать' animation size='large'/>
+            <Button children='Начать' animation size='large' onClick={() => navigate('/course')}/>
             <img src={arrow} alt="arrow" className={cls.arrow}/>
         </div>
         <div className={cls.description}>

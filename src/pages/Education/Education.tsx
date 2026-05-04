@@ -8,6 +8,7 @@ import { ProgressBar } from '../../components/UI/ProgressBar'
 import { Button } from '../../components/UI/Button'
 import { Modal } from '../../components/UI/Modal'
 import { useNavigate } from 'react-router-dom'
+import { AsideMenu } from '../../components/UI/AsideMenu'
 
 const testData = {
   userName: "TheGedzie",
@@ -38,6 +39,7 @@ export const Education = () => {
   return (
 
     <div className={cls.education}>
+      <AsideMenu />
       {isProgressComplete && <Modal XP={800} Name='TheGedzie' Course='React' isOpen/>}
       <div className={cls.helloUser}>
         <span>WELCOME,<br />{testData.userName}</span>
