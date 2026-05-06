@@ -27,7 +27,7 @@ export const PreviewCourse = () => {
     <div className={cls.PreviewCourse}>
         <div className={cls.hero}>
             <Title children={course?.name} color='green' size='large' level='h1'/>
-            <Button children='Начать' animation size='large' onClick={() => navigate('/course')}/>
+            <Button children='Начать' animation size='large' onClick={() => navigate(`/course/${id}`)}/>
             <img src={arrow} alt="arrow" className={cls.arrow}/>
         </div>
         <div className={cls.description}>

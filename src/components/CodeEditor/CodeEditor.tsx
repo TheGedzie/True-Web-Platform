@@ -1,43 +1,31 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import CodeMirror from '@uiw/react-codemirror';
 import { html } from '@codemirror/lang-html';
 import { oneDark } from '@codemirror/theme-one-dark';
 import cls from './CodeEditor.module.css'; // ← теперь cls
 
-const CodeEditor = () => {
-  const [htmlCode, setHtmlCode] = useState(`<!DOCTYPE html>
-<html>
-<head>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      padding: 20px;
-      background: #f0f0f0;
-    }
-    .greeting {
-      color: blue;
-      text-align: center;
-    }
-  </style>
-</head>
-<body>
-  <div class="greeting">
-    <h1>Привет, мир!</h1>
-    <p>Редактируй этот код</p>
-  </div>
-</body>
-</html>`);
+interface CodeEditorProps {
+  codeValue : string,
+  resultValue : string
+}
 
+
+const CodeEditor = ({codeValue, resultValue} : CodeEditorProps) => {
+  const [htmlCode, setHtmlCode] = useState(`${codeValue}`);
+  
   const [output, setOutput] = useState('');
-
+  
   const handleCodeChange = (value) => {
     setHtmlCode(value);
     updatePreview(value);
   };
-
+  
   const updatePreview = (code) => {
     setOutput(code);
   };
+  useEffect(() => {
+    setHtmlCode(codeValue)
+  }, [codeValue])
 
   return (
     <div className={cls.container}>
