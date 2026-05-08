@@ -4,6 +4,7 @@ import { PreviewCourse } from "./pages/PreviewCourse"
 import { Start } from "./pages/Start"
 import { Course } from "./pages/Course"
 import { Courses } from "./pages/Courses"
+import { RegisterAuth } from "./pages/RegisterAuth"
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Route path="/course/:id" element={<Course />}></Route>
       <Route path="/" element={<Start />}/>
       <Route path="/courses" element={<Courses />}/>
+      <Route path="/register" element={<RegisterAuth />}/>
     </Routes>
    </BrowserRouter>
   )

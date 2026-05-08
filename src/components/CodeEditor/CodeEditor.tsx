@@ -6,11 +6,10 @@ import cls from './CodeEditor.module.css'; // ← теперь cls
 
 interface CodeEditorProps {
   codeValue : string,
-  resultValue : string
 }
 
 
-const CodeEditor = ({codeValue, resultValue} : CodeEditorProps) => {
+const CodeEditor = ({codeValue} : CodeEditorProps) => {
   const [htmlCode, setHtmlCode] = useState(`${codeValue}`);
   
   const [output, setOutput] = useState('');

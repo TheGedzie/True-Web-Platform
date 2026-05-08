@@ -43,7 +43,7 @@ export const Course = () => {
 
   return (
     <>
-      <CodeEditor codeValue={`<h1>${courseContent || ''}</h1>`} />
+      <CodeEditor codeValue={`<h1>${courseContent || ''}</h1>`}/>
       <div className={cls.buttonContainer}>
         <Button 
           children="⇦ Назад" 

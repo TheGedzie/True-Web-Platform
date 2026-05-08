@@ -20,7 +20,7 @@ export const Start = () => {
             <div className={cls.heroRight}>
                 <Title children="TrueWebPlatform" size='large' color='white'/>
                 <Button  children="Присоедениться" animation size='large' onClick={() => {
-                    navigate('/education')
+                    navigate('/register')
                 }}/>
             </div>
         </div>
