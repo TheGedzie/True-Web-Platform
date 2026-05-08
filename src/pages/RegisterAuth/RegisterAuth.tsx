@@ -4,6 +4,7 @@ import { Button } from '../../components/UI/Button'
 import { useForm } from 'react-hook-form'
 import mascotte from '../../assets/mascotte.svg'
 import { Title } from '../../components/UI/Title'
+import { Error } from '../../components/UI/Error'
 
 interface IForm{
   'userName': string
@@ -89,10 +90,10 @@ export const RegisterAuth = () => {
                 }
               )
             }/>
-          {errors.userName && <p>{errors.userName.message}</p>}
-          {errors.email && <p>{errors.email.message}</p>}
-          {errors.password && <p>{errors.password.message}</p>}
-          {errors.repeatPassword && <p>{errors.repeatPassword.message}</p>}
+          {errors.userName && <Error children = {errors.userName.message}/>}
+          {errors.email && <Error children={errors.email.message}/>}
+          {errors.password && <Error children={errors.password.message}/>}
+          {errors.repeatPassword && <Error children={errors.repeatPassword.message}/>}
           <Button size='medium' type='submit' children="Зарегестрироваться"/>
             </form>
         </>
@@ -117,8 +118,8 @@ export const RegisterAuth = () => {
                     }
                   )
                 }/>
-               {errors.email && <p>{errors.email.message}</p>}
-               {errors.password && <p>{errors.password.message}</p>} 
+               {errors.email && <Error children={errors.email.message}/>}
+               {errors.password && <Error children={errors.password.message}/>} 
                 <Button children="Авторизироваться" type='submit'/>
               </form>
             </>
