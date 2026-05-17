@@ -3,6 +3,7 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   --main-bg-color: repeating-linear-gradient(135deg,
@@ -19,3 +20,27 @@ body {
 /* @media (prefers-color-scheme: light) {
 
 } */
+/* Игровой скроллбар */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a1a0a;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #59FD7C;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #7aff8c;
+}
+
+/* Выделение текста */
+::selection {
+  background: #59FD7C;
+  color: #0a1a0a;
+}

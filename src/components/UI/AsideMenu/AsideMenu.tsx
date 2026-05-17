@@ -8,7 +8,7 @@ export const AsideMenu = () => {
       <p className={cls.asideMenuElement} onClick={() => navigate('/')}>HOME</p>
       <p className={cls.asideMenuElement} onClick={() => navigate('/profile')}>PROFILE</p>
       <p className={cls.asideMenuElement} onClick={() => navigate('/courses')}>COURSES</p>
-      <p className={cls.asideMenuElement} onClick={() => navigate('/chellenges')}>CHELLENGES</p>
+      <p className={cls.asideMenuElement} onClick={() => navigate('/challenges')}>CHELLENGES</p>
     </div>
   )
 }

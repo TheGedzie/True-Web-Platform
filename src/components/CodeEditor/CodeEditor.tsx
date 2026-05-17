@@ -1,41 +1,55 @@
 import React, { useEffect, useState } from 'react';
 import CodeMirror from '@uiw/react-codemirror';
 import { html } from '@codemirror/lang-html';
+import { javascript } from '@codemirror/lang-javascript';
 import { oneDark } from '@codemirror/theme-one-dark';
-import cls from './CodeEditor.module.css'; // ← теперь cls
+import cls from './CodeEditor.module.css';
 
 interface CodeEditorProps {
-  codeValue : string,
+  codeValue: string;
+  onCodeChange?: (value: string) => void;
+  language?: 'html' | 'javascript'; // Добавляем выбор языка
 }
 
-
-const CodeEditor = ({codeValue} : CodeEditorProps) => {
-  const [htmlCode, setHtmlCode] = useState(`${codeValue}`);
-  
+const CodeEditor = ({ codeValue, onCodeChange, language = 'html' }: CodeEditorProps) => {
+  const [htmlCode, setHtmlCode] = useState(codeValue);
   const [output, setOutput] = useState('');
-  
-  const handleCodeChange = (value) => {
+
+  const handleCodeChange = (value: string) => {
     setHtmlCode(value);
+    onCodeChange?.(value);
     updatePreview(value);
   };
-  
-  const updatePreview = (code) => {
+
+  const updatePreview = (code: string) => {
     setOutput(code);
   };
+
   useEffect(() => {
-    setHtmlCode(codeValue)
-  }, [codeValue])
+    setHtmlCode(codeValue);
+  }, [codeValue]);
+
+  // Выбираем расширение в зависимости от языка
+  const getLanguageExtension = () => {
+    switch (language) {
+      case 'javascript':
+        return javascript({ jsx: true, typescript: false });
+      case 'html':
+      default:
+        return html();
+    }
+  };
 
   return (
     <div className={cls.container}>
       <div className={cls.editorPane}>
         <div className={cls.paneHeader}>
-          <span>📝 Редактор кода</span>
+          <span>📝 {language === 'javascript' ? 'JavaScript' : 'HTML'} редактор</span>
         </div>
         <CodeMirror
           value={htmlCode}
           height="100%"
-          extensions={[html(), oneDark]}
+          extensions={[getLanguageExtension()]}
           onChange={handleCodeChange}
           theme={oneDark}
           basicSetup={{
@@ -62,11 +76,11 @@ const CodeEditor = ({codeValue} : CodeEditorProps) => {
           }}
         />
       </div>
-      
+
       <div className={cls.previewPane}>
         <div className={cls.paneHeader}>
           <span>👁️ Результат</span>
-          <button 
+          <button
             className={cls.runBtn}
             onClick={() => updatePreview(htmlCode)}
           >

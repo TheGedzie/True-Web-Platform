@@ -5,7 +5,7 @@ interface IHomeCourseCard{
     children : ReactNode
     onClick?: () => void
     customClass?: string
-    color?: 'yellow' | 'blue' | 'orange'
+    color?: 'yellow' | 'blue' | 'orange' | 'purple' | 'green' | 'red'
     size?: 'small' | 'medium' | 'large'
 }
 

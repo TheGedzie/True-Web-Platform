@@ -1,0 +1,121 @@
+/* Challenges.module.css */
+.challenges {
+  min-height: 100vh;
+  background: #071107;
+  padding: 40px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.subtitle {
+  color: #59FD7C;
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+.stats {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.statCard {
+  background: rgba(89, 253, 124, 0.1);
+  border: 1px solid #59FD7C;
+  border-radius: 20px;
+  padding: 20px 30px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.statIcon {
+  font-size: 40px;
+}
+
+.statValue {
+  font-size: 32px;
+  font-weight: bold;
+  color: #59FD7C;
+}
+
+.statLabel {
+  color: white;
+  font-size: 14px;
+}
+
+.challengesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 25px;
+}
+
+.challengeCard {
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid #59FD7C;
+  border-radius: 20px;
+  padding: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.challengeCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 30px rgba(89, 253, 124, 0.2);
+}
+
+.challengeCard.completed {
+  opacity: 0.7;
+  border-color: #59FD7C;
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.difficulty {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.completedBadge {
+  color: #59FD7C;
+  font-size: 12px;
+}
+
+.challengeTitle {
+  color: white;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.challengeCategory {
+  color: #888;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.challengeDesc {
+  color: #ccc;
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.cardFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.xpReward {
+  color: #FDEA59;
+  font-weight: bold;
+}

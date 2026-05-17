@@ -1,28 +1,27 @@
-import React, { useEffect, useState } from 'react'
 import cls from './previewCourse.module.css'
+import type { ICourse } from '../../types'
+import { useEffect, useState } from 'react'
+import { useNavigate, useParams } from 'react-router-dom'
+import { fetchCourse } from '../../services/CourseService'
 import { Title } from '../../components/UI/Title'
 import { Button } from '../../components/UI/Button'
-import { useNavigate, useParams } from 'react-router-dom'
-import { getData } from '../../services/api'
 import arrow from '../../assets/arrow.svg'
-interface Course {
-  id: number
-  name: string
-  difficult: string
-  pages: number
-}
+
 
 export const PreviewCourse = () => {
+    // Хук для роутинга 
     const navigate = useNavigate()
-    const [course, setCourse] = useState<Course[] | null>(null);
+    // Получаем опциональный параметр id
     const { id } = useParams();
-      useEffect(() => {
-          getData(`http://localhost:3000/courses/${id}`)
-              .then(response => {
-                  setCourse(response.data) 
-              })
-              .catch(error => console.error(error))
-      }, [])
+    // Состояние для массива курсов
+    const [course, setCourse] = useState<ICourse | null>(null);
+    // Получение курса по id 
+    useEffect(() => {
+        if(id){
+            fetchCourse(id).then(setCourse)
+        }
+      },[id])
+
   return (
     <div className={cls.PreviewCourse}>
         <div className={cls.hero}>

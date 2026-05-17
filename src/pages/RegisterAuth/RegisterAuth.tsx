@@ -5,6 +5,7 @@ import { useForm } from 'react-hook-form'
 import mascotte from '../../assets/mascotte.svg'
 import { Title } from '../../components/UI/Title'
 import { Error } from '../../components/UI/Error'
+import { useNavigate } from 'react-router-dom'
 
 interface IForm{
   'userName': string
@@ -18,6 +19,7 @@ const onSubmit = (data : IForm) => {
 }
 
 export const RegisterAuth = () => {
+  const navigate = useNavigate()
   const { register, handleSubmit, watch, formState: {errors} } = useForm<IForm>(
     {
       mode: 'onChange'
@@ -94,7 +96,7 @@ export const RegisterAuth = () => {
           {errors.email && <Error children={errors.email.message}/>}
           {errors.password && <Error children={errors.password.message}/>}
           {errors.repeatPassword && <Error children={errors.repeatPassword.message}/>}
-          <Button size='medium' type='submit' children="Зарегестрироваться"/>
+          <Button size='medium' type='submit' children="Зарегестрироваться" onClick={() => navigate('/education')}/>
             </form>
         </>
           )}

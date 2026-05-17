@@ -1,3 +1,26 @@
+/* Стилизация цветов (обводка/текст для значков, иконок) */
+.green{
+    border-color:  #59FD7C;
+    color: #59FD7C;
+}
+.blue{
+    border-color:  #59D9FD;
+    color: #59D9FD; 
+}
+.purple{
+    border-color:  #BB59FD;
+    color: #BB59FD; 
+}
+.red{
+    border-color:  #FD595C;
+    color: #FD595C; 
+}
+.yellow{
+    border-color:  #FDEA59;
+    color: #FDEA59; 
+}
+
+/* Основной компонент карточки */
 .HomeCourseCard{
     position: relative;
     color: #fff;
@@ -8,6 +31,7 @@
     border-radius: 30px;
     cursor: pointer;
 }
+
 .HomeCourseCard:hover::before{
     top: 20px;
     left: 20px;
@@ -16,6 +40,7 @@
     top: 40px;
     left: 40px;
 }
+
 .HomeCourseCard::before{
     position: absolute;
     content: "";
@@ -28,6 +53,7 @@
     z-index: -1;
     transition: .4s all;
 }
+
 .HomeCourseCard::after{
     position: absolute;
     content: "";
@@ -40,6 +66,8 @@
     z-index: -2;
     transition: .4s all;
 }
+
+/* Размеры карточек */
 .small{
     width: 500px;
     height: 150px;
@@ -56,8 +84,11 @@
     font-size: 64px;
 }
 
+/* ========== ЦВЕТОВЫЕ ПРЕСЕТЫ (фон + тени) ========== */
+/* Используем data-атрибуты, чтобы не конфликтовать с классами для border */
+
 /* BLUE-PRESET */
-.blue{
+.HomeCourseCard[data-color='blue'] {
     background-color: #0077FF;
 }
 .HomeCourseCard[data-color='blue']::before{
@@ -68,7 +99,7 @@
 }
 
 /* YELLOW-PRESET */
-.yellow{
+.HomeCourseCard[data-color='yellow'] {
     background-color: #FFCC00;
 }
 .HomeCourseCard[data-color='yellow']::before{
@@ -78,7 +109,8 @@
     background-color: #AF8C00;
 }
 
-.orange{
+/* ORANGE-PRESET */
+.HomeCourseCard[data-color='orange'] {
     background-color: #FF6200;
 }
 .HomeCourseCard[data-color='orange']::before{
@@ -86,4 +118,37 @@
 }
 .HomeCourseCard[data-color='orange']::after{
     background-color: #AF0000;
+}
+
+/* GREEN-PRESET */
+.HomeCourseCard[data-color='green'] {
+    background-color: #00C853;
+}
+.HomeCourseCard[data-color='green']::before{
+    background-color: #009624;
+}
+.HomeCourseCard[data-color='green']::after{
+    background-color: #006E1A;
+}
+
+/* PURPLE-PRESET */
+.HomeCourseCard[data-color='purple'] {
+    background-color: #9C27B0;
+}
+.HomeCourseCard[data-color='purple']::before{
+    background-color: #7B1FA2;
+}
+.HomeCourseCard[data-color='purple']::after{
+    background-color: #4A148C;
+}
+
+/* RED-PRESET */
+.HomeCourseCard[data-color='red'] {
+    background-color: #FF3B30;
+}
+.HomeCourseCard[data-color='red']::before{
+    background-color: #D32F2F;
+}
+.HomeCourseCard[data-color='red']::after{
+    background-color: #B71C1C;
 }
