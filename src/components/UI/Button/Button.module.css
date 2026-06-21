@@ -24,7 +24,10 @@
 .medium {
   border-radius: 18px;
   padding: 18px 20px;
-  font-size: 22px;
+  font-weight: 400;
+  font-size: 16px;
+  width: 250px;
+  background-color: #59FD7C;
 }
 
 .small {

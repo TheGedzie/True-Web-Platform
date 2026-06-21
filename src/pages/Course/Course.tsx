@@ -1,118 +1,156 @@
 // Импорты
-
-import cls from './Course.module.css'
-import type { ICourse, IUser } from '../../types'
-import { useEffect, useState } from 'react'
-import { useNavigate, useParams } from 'react-router-dom'
-import { fetchCourse } from '../../services/CourseService'
-import { fetchUser, patchUser } from '../../services/UsersService'
-import CodeEditor from '../../components/CodeEditor/CodeEditor'
-import { Button } from '../../components/UI/Button'
-import { ProgressBar } from '../../components/UI/ProgressBar'
-import { Modal } from '../../components/UI/Modal'
+import cls from "./Course.module.css";
+import type { ICourse, IUser } from "../../types";
+import { useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
+import { fetchCourse } from "../../services/CourseService";
+import { fetchUser, patchUser } from "../../services/UsersService";
+import CodeEditor from "../../components/CodeEditor/CodeEditor";
+import { Button } from "../../components/UI/Button";
+import { ProgressBar } from "../../components/UI/ProgressBar";
+import { Modal } from "../../components/UI/Modal";
+import { Quiz } from "../../components/UI/Quiz";
 
 export const Course = () => {
-  // Получаем опциональный параметр id
-  const { id } = useParams()
-  // Создание хука для навигации
-  const navigate = useNavigate()
-  // Состояние для курса
-  const [course, setCourse] = useState<null | ICourse>(null)
-  // Состояние пользователя
-  const [user, setUser] = useState<null | IUser>(null)
-  // Состояние для пагнинации
-  const [currentPage, setCurrentPage] = useState<number>(0)
-  // Состояние для модального окна
-  const [open, setOpen] = useState<boolean>(false)
-  
-  // Вычисляем контент для текущей страницы
-  const content = course?.content?.[currentPage]
+  const XP: number = 50;
+  const { id } = useParams();
+  const navigate = useNavigate();
+  const [course, setCourse] = useState<null | ICourse>(null);
+  const [user, setUser] = useState<null | IUser>(null);
+  const [currentPage, setCurrentPage] = useState<number>(0);
+  const [open, setOpen] = useState<boolean>(false);
+  const [showQuiz, setShowQuiz] = useState<boolean>(false);
+  const [quizCompleted, setQuizCompleted] = useState<boolean>(false);
 
-  // Загрузка курса и пользователя
-  useEffect(() => {
-    fetchUser().then(setUser)
-  }, [])
+  // ✅ ТЕПЕРЬ ТЕСТ БЕРЁТСЯ ИЗ КУРСА (из database.json)
+  const quiz = course?.quiz;
+
+  const content = course?.content?.[currentPage];
 
   useEffect(() => {
-    if(id){
-      fetchCourse(id).then(setCourse)
+    fetchUser().then(setUser);
+  }, []);
+
+  useEffect(() => {
+    if (id) {
+      fetchCourse(id).then(setCourse);
     }
-  }, [id])
+  }, [id]);
 
-    const courseComplete = user?.completedCourses.includes(Number(id))
-    
-    // Открываем модалку когда дошли до последней страницы (только один раз)
-    const totalPages = course?.content?.length || 0
-    const isLastPage = currentPage === totalPages - 1
-  
+  const courseComplete = user?.completedCourses.includes(Number(id));
+  const totalPages = course?.content?.length || 0;
+  const isLastPage = currentPage === totalPages - 1;
 
-  // Обработчик нажатия "Вперёд"
   const handleNext = () => {
     if (course && currentPage < course.content.length - 1) {
-      setCurrentPage(currentPage + 1)
+      setCurrentPage(currentPage + 1);
     }
-  }
+  };
 
-  // Обработчик нажатия "Назад"
   const handlePrev = () => {
     if (currentPage > 0) {
-      setCurrentPage(currentPage - 1)
+      setCurrentPage(currentPage - 1);
     }
-  }
-  // Функция добавления пройденного курса в массив бекенд
-  const handleComplete = async () => {
+  };
+
+  // ОСНОВНАЯ ФУНКЦИЯ ЗАВЕРШЕНИЯ — НАЧИСЛЕНИЕ XP
+  const completeCourse = async () => {
+    if (!user) return;
+
+    console.log("📤 Отправляем запрос на завершение курса");
+    console.log("📤 courseId:", Number(id));
+    console.log("📤 Текущий user.totalXP:", user.totalXP);
+
     try {
-      const updatedUser = await patchUser({ courseId: Number(id) })
-      setUser(updatedUser)
-      setOpen(true)
-    } catch (error) {
-      console.error('Ошибка при завершении курса:', error)
-      alert('Не удалось завершить курс')
+      const updatedUser = await patchUser({
+        courseId: Number(id),
+      });
+      console.log("✅ Ответ от сервера:", updatedUser);
+      console.log("✅ Новый totalXP:", updatedUser.totalXP);
+      setUser(updatedUser);
+      setOpen(true);
+    } catch (error: any) {
+      console.error("❌ Ошибка:", error);
+      if (error.response?.status === 400) {
+        setOpen(true);
+      } else {
+        alert("Не удалось завершить курс");
+      }
     }
-  }
-  const currentPageNumber = currentPage + 1
+  };
+
+  // ОБРАБОТЧИК КНОПКИ "ЗАВЕРШИТЬ" — ЗАПУСКАЕТ ТЕСТ ИЛИ XP
+  const handleCourseComplete = async () => {
+    if (!user) return;
+
+    // ✅ ТЕПЕРЬ ТЕСТ БЕРЁТСЯ ИЗ course.quiz
+    if (quiz && !quizCompleted) {
+      setShowQuiz(true); // открываем тест
+    } else if (!quiz) {
+      await completeCourse(); // сразу XP
+    }
+  };
+
+  const handleQuizPass = async () => {
+    setShowQuiz(false);
+    setQuizCompleted(true);
+    await completeCourse(); // XP после теста
+  };
+
+  const currentPageNumber = currentPage + 1;
 
   return (
     <>
-      {courseComplete && (
-        <h1>Вы уже прошли этот курс !</h1>
-      )}
-      <ProgressBar 
-        currentProgress={currentPageNumber} 
+      {courseComplete && <h1>Вы уже прошли этот курс !</h1>}
+      <ProgressBar
+        currentProgress={currentPageNumber}
         totalProgress={totalPages}
       />
+
       <div className={cls.buttonContainer}>
-        <Button 
-          children="⇦ Назад" 
+        <Button
+          children="⇦ Назад"
           onClick={handlePrev}
           disabled={currentPage === 0}
         />
-        <Button 
-          children={isLastPage ? "Завершить" : "Вперёд ⇨"} 
-        onClick={() => {
-          if (isLastPage) {
-            if (courseComplete) {
-              navigate('/education')
+        <Button
+          children={isLastPage ? "Завершить" : "Вперёд ⇨"}
+          onClick={() => {
+            if (isLastPage) {
+              if (courseComplete) {
+                navigate("/education");
+              } else {
+                handleCourseComplete();
+              }
             } else {
-              handleComplete() 
+              handleNext();
             }
-          } else {
-            handleNext()
-          }
-        }}
+          }}
         />
       </div>
-      <Modal 
+
+      <Modal
         isOpen={open}
-        onClose={() => {setOpen(false)}}
-        Name={'TheGedzie'} 
-        XP={300} 
-        Course={course?.name || 'Курс'}
-        redirect = {true}
-        navigates={'/education'}
+        onClose={() => setOpen(false)}
+        type="courseComplete"
+        Name={user?.username}
+        XP={XP}
+        Course={course?.name || "Курс"}
+        redirect={true}
+        navigates={"/education"}
       />
 
-      <CodeEditor codeValue={content || 'Загрузка...'} />
+      {/* ✅ КВИЗ БЕРЁТ ВОПРОСЫ ИЗ course.quiz */}
+      {showQuiz && quiz && (
+        <Quiz
+          questions={quiz.questions || []}
+          courseName={course?.name || "Курс"}
+          onPass={handleQuizPass}
+          onClose={() => setShowQuiz(false)}
+        />
+      )}
+
+      <CodeEditor codeValue={content || "Загрузка..."} />
     </>
-  )
-}
+  );
+};

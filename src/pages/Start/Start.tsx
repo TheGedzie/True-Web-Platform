@@ -1,13 +1,13 @@
-import React from 'react'
-import cls from './Start.module.css'
-import { Badge } from '../../components/UI/Badge'
-import { Button } from '../../components/UI/Button'
-import { Title } from '../../components/UI/Title'
-import { useNavigate } from 'react-router-dom'
-import GreenFire from '../../components/ParticleBackgound/ParticleBackground'
+import React from "react";
+import cls from "./Start.module.css";
+import { Badge } from "../../components/UI/Badge";
+import { Button } from "../../components/UI/Button";
+import { Title } from "../../components/UI/Title";
+import { useNavigate } from "react-router-dom";
+import GreenFire from "../../components/ParticleBackgound/ParticleBackground";
 
 export const Start = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   return (
     <div className={cls.StartPg}>
@@ -17,32 +17,32 @@ export const Start = () => {
 
       <section className={cls.hero}>
         <div className={cls.heroLeft}>
-            <div className={cls.BadgeWrapper}>
-                <Badge children="Освой web-разработку" color="green" size="large" />
-                <Badge children="Практикуйся" color="blue" size="large" />
-                <Badge children="Соревнуйся" color="purple" size="large" />
-                <Badge children="Ломай голову" color="red" size="large" />
-                <Badge children="Получи поддержку" color="yellow" size="large" />
+          <div className={cls.BadgeWrapper}>
+            <Badge children="Освой web-разработку" color="green" size="large" />
+            <Badge children="Практикуйся" color="blue" size="large" />
+            <Badge children="Соревнуйся" color="purple" size="large" />
+            <Badge children="Ломай голову" color="red" size="large" />
+            <Badge children="Получи поддержку" color="yellow" size="large" />
 
-                <Badge children="Освой web-разработку" color="green" size="large" />
-                <Badge children="Практикуйся" color="blue" size="large" />
-                <Badge children="Соревнуйся" color="purple" size="large" />
-                <Badge children="Ломай голову" color="red" size="large" />
-                <Badge children="Получи поддержку" color="yellow" size="large" />
+            <Badge children="Освой web-разработку" color="green" size="large" />
+            <Badge children="Практикуйся" color="blue" size="large" />
+            <Badge children="Соревнуйся" color="purple" size="large" />
+            <Badge children="Думай" color="red" size="large" />
+            <Badge children="Получи поддержку" color="yellow" size="large" />
 
-                <Badge children="Освой web-разработку" color="green" size="large" />
-                <Badge children="Практикуйся" color="blue" size="large" />
-                <Badge children="Соревнуйся" color="purple" size="large" />
-                <Badge children="Ломай голову" color="red" size="large" />
-                <Badge children="Получи поддержку" color="yellow" size="large" />
+            <Badge children="Освой web-разработку" color="green" size="large" />
+            <Badge children="Практикуйся" color="blue" size="large" />
+            <Badge children="Соревнуйся" color="purple" size="large" />
+            <Badge children="Думай" color="red" size="large" />
+            <Badge children="Получи поддержку" color="yellow" size="large" />
 
-                <Badge children="Освой web-разработку" color="green" size="large" />
-                <Badge children="Практикуйся" color="blue" size="large" />
-                <Badge children="Соревнуйся" color="purple" size="large" />
-                <Badge children="Ломай голову" color="red" size="large" />
-                <Badge children="Получи поддержку" color="yellow" size="large" />
-            </div>
-            </div>
+            <Badge children="Освой web-разработку" color="green" size="large" />
+            <Badge children="Практикуйся" color="blue" size="large" />
+            <Badge children="Соревнуйся" color="purple" size="large" />
+            <Badge children="Думай" color="red" size="large" />
+            <Badge children="Получи поддержку" color="yellow" size="large" />
+          </div>
+        </div>
 
         <div className={cls.heroRight}>
           <Title children="TrueWebPlatform" size="large" color="white" />
@@ -52,7 +52,7 @@ export const Start = () => {
             children="Начать"
             animation
             size="large"
-            onClick={() => navigate('/register')}
+            onClick={() => navigate("/register")}
           />
         </div>
       </section>
@@ -89,9 +89,9 @@ export const Start = () => {
           children="Присоединиться"
           animation
           size="large"
-          onClick={() => navigate('/register')}
+          onClick={() => navigate("/register")}
         />
       </section>
     </div>
-  )
-}
+  );
+};

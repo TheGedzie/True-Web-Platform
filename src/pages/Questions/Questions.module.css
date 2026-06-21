@@ -1,0 +1,162 @@
+.page {
+  width: 100%;
+  height: 100vh;
+  padding: 50px;
+}
+.heroContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+.titleContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.messageCircle {
+  color: var(--green-text);
+}
+.title {
+  font-size: 60px;
+  font-weight: 600;
+}
+.description {
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--grey-text);
+}
+.askQuestion {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px;
+}
+.askButton {
+  background: linear-gradient(135deg, #59fd7c, #10b981) !important;
+  color: var(--black);
+  font-size: 18px;
+  gap: 5px;
+  font-weight: 700;
+  border: none;
+  width: 250px;
+  height: 60px;
+}
+.askButton:hover {
+  transform: scale(1.05);
+  background: linear-gradient(135deg, #59fd7c, #10b981) !important;
+  box-shadow: 0 0 30px rgba(89, 253, 124, 0.6);
+}
+/* Форма */
+.form {
+  background: var(--bg-card);
+  backdrop-filter: blur(10px);
+  border: 2px solid var(--green-text);
+  border-radius: 20px;
+  padding: 30px;
+  width: 100%;
+  max-width: 600px;
+  position: relative;
+}
+.formTitle {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 5px;
+  margin-bottom: 30px;
+}
+.SparklesIcon {
+  color: var(--green-text);
+}
+/* Поля ввода */
+.input,
+.textarea {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid var(--green-text);
+  border-radius: 12px;
+  padding: 12px 16px;
+  color: white;
+  font-size: 14px;
+  margin-bottom: 16px;
+  transition: all 0.2s ease;
+}
+
+.input:focus,
+.textarea:focus {
+  outline: none;
+  border-color: #7aff8c;
+  box-shadow: 0 0 10px var(--green-glow);
+}
+
+.textarea {
+  resize: vertical;
+  font-family: inherit;
+}
+
+/* Кнопки формы */
+.formButtons {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.formButtons button {
+  flex: 1;
+}
+/* Кнопка отправки формы */
+.submitBtn {
+  background: linear-gradient(135deg, #59fd7c, #10b981) !important;
+  color: #000;
+  font-weight: 700;
+  border: none;
+  width: 100%;
+  height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.submitBtn:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 20px rgba(89, 253, 124, 0.5);
+}
+
+/* Кнопка отмены */
+.cancelBtn {
+  background: #374151;
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  width: 100%;
+  height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.cancelBtn:hover {
+  background: #4b5563 !important;
+}
+.forum {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-shrink: 0;
+  gap: 30px;
+}
+.questionContainer {
+  height: auto;
+}

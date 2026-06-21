@@ -1,0 +1,101 @@
+:root{
+    --green-text: #59FD7C;
+    --green-border: #1d5428; 
+    --white: #fff;
+    --grey-text: #99a1af;
+    --black: #000;
+}
+
+.Question {
+    width: 400px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    background: rgba(0, 0, 0, 0.5);
+    border: 2px solid var(--green-border);
+    border-radius: 15px;
+    padding: 20px;
+    transition: all .2s;
+    animation: animateQuestion .2s linear;
+}
+@keyframes animateQuestion {
+    from{
+        transform: translateY(15px);
+    }
+    to{
+        transform: translateY(0);
+    }
+}
+.Question:hover{
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.4);
+    transform: translateY(-5px);
+}
+.Question:hover .questInfoTitle {
+    color: var(--green-text);
+}
+.questionCreateInfo {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+}
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid #59FD7C;
+}
+.questionCreateInfoRight {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1px;
+}
+.authorName {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--green-text);
+}
+.dateCreateQuestion {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--grey-text);
+}
+.questionInfo {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    gap: 15px;
+}
+.questInfoTitle {
+    transition: all .2s;
+    font-size: 24px;
+}
+.questInfoContent {
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--grey-text);
+}
+.questionMetaData {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    column-gap: 10px;
+}
+.viewsCount,.answerCount {
+    display: flex;
+    align-items: center;
+    column-gap: 3px;
+    font-weight: 400;
+    font-size: 16px;
+    color: var(--grey-text);
+}

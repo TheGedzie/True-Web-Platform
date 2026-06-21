@@ -1,1 +1,1 @@
-// export { GreenFire } from './ParticleBackground'
+export { Background } from './ParticleBackground'

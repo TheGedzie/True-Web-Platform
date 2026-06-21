@@ -4,18 +4,22 @@
   position: relative;
   min-height: 100vh;
   padding: 40px 20px;
-  background: linear-gradient(135deg, #0a1a0a 0%, #0d2b0d 50%, #0a1a0a 100%);
+  background: #071107; /* ← ОСНОВНОЙ ТЕМНЫЙ ФОН */
   overflow-x: hidden;
 }
 
-/* Фоновое свечение */
+/* Фоновый декоративный элемент (размытый шар) */
 .backgroundGlow {
   position: fixed;
   top: 50%;
   left: 50%;
   width: 600px;
   height: 600px;
-  background: radial-gradient(circle, rgba(89, 253, 124, 0.15) 0%, rgba(89, 253, 124, 0) 70%);
+  background: radial-gradient(
+    circle,
+    rgba(89, 253, 124, 0.12) 0%,
+    rgba(89, 253, 124, 0) 70%
+  );
   transform: translate(-50%, -50%);
   pointer-events: none;
   z-index: 0;
@@ -26,14 +30,14 @@
   position: relative;
   z-index: 2;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   margin-bottom: 40px;
   padding: 20px 30px;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.6);
   backdrop-filter: blur(10px);
   border-radius: 20px;
-  border: 1px solid #59FD7C;
+  border: 1px solid #59fd7c;
   box-shadow: 0 0 20px rgba(89, 253, 124, 0.3);
 }
 
@@ -44,8 +48,13 @@
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-5px); }
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
 }
 
 /* Контент */
@@ -61,11 +70,11 @@
 
 /* Карточка персонажа */
 .characterCard {
-  background: linear-gradient(135deg, rgba(0, 0, 0, 0.7) 0%, rgba(30, 50, 30, 0.7) 100%);
+  background: rgba(0, 0, 0, 0.7);
   backdrop-filter: blur(10px);
   border-radius: 30px;
   padding: 30px;
-  border: 2px solid #59FD7C;
+  border: 2px solid #59fd7c;
   box-shadow: 0 0 30px rgba(89, 253, 124, 0.2);
   display: flex;
   gap: 30px;
@@ -82,15 +91,20 @@
   width: 130px;
   height: 130px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #59FD7C, #2a8a3a);
+  background: linear-gradient(135deg, #59fd7c, #2a8a3a);
   padding: 3px;
   margin-bottom: 15px;
   animation: borderPulse 2s ease-in-out infinite;
 }
 
 @keyframes borderPulse {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(89, 253, 124, 0.7); }
-  50% { box-shadow: 0 0 0 10px rgba(89, 253, 124, 0); }
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(89, 253, 124, 0.7);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(89, 253, 124, 0);
+  }
 }
 
 .avatar {
@@ -115,8 +129,8 @@
   font-weight: bold;
   font-size: 20px;
   color: white;
-  text-shadow: 0 1px 2px rgba(0,0,0,0.3);
-  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
 .levelIcon {
@@ -142,7 +156,7 @@
 }
 
 .xpFill {
-  background: linear-gradient(90deg, #59FD7C, #2a8a3a);
+  background: linear-gradient(90deg, #59fd7c, #2a8a3a);
   border-radius: 20px;
   height: 100%;
   transition: width 0.5s ease;
@@ -151,25 +165,34 @@
 }
 
 .xpFill::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
   animation: shine 2s infinite;
 }
 
 @keyframes shine {
-  0% { transform: translateX(-100%); }
-  100% { transform: translateX(100%); }
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
 }
 
 .xpText {
   display: flex;
   justify-content: space-between;
-  color: #59FD7C;
+  color: #59fd7c;
   font-size: 14px;
   font-weight: bold;
 }
@@ -180,8 +203,10 @@
   backdrop-filter: blur(10px);
   border-radius: 20px;
   padding: 25px;
-  border: 1px solid #59FD7C;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid #59fd7c;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .statCard:hover {
@@ -195,7 +220,7 @@
   gap: 12px;
   margin-bottom: 25px;
   padding-bottom: 15px;
-  border-bottom: 2px solid #59FD7C;
+  border-bottom: 2px solid #59fd7c;
 }
 
 .cardIcon {
@@ -203,7 +228,7 @@
 }
 
 .cardHeader h3 {
-  color: #59FD7C;
+  color: #59fd7c;
   font-size: 22px;
   margin: 0;
   text-transform: uppercase;
@@ -231,7 +256,7 @@
 
 .statItem label {
   display: block;
-  color: #59FD7C;
+  color: #59fd7c;
   font-size: 14px;
   margin-bottom: 8px;
   font-weight: bold;
@@ -249,7 +274,7 @@
 .textarea {
   width: 100%;
   background: rgba(0, 0, 0, 0.6);
-  border: 1px solid #59FD7C;
+  border: 1px solid #59fd7c;
   border-radius: 10px;
   padding: 10px 15px;
   color: #fff;
@@ -278,7 +303,7 @@
 }
 
 .skill {
-  background: linear-gradient(135deg, #59FD7C, #2a8a3a);
+  background: linear-gradient(135deg, #59fd7c, #2a8a3a);
   color: #0a1a0a;
   padding: 5px 15px;
   border-radius: 20px;
@@ -293,7 +318,7 @@
 
 /* Социальные ссылки */
 .socialLink {
-  color: #59FD7C;
+  color: #59fd7c;
   text-decoration: none;
   transition: all 0.3s ease;
   display: inline-flex;
@@ -303,7 +328,7 @@
 
 .socialLink:hover {
   color: #7aff8c;
-  text-shadow: 0 0 5px #59FD7C;
+  text-shadow: 0 0 5px #59fd7c;
   transform: translateX(5px);
 }
 
@@ -315,7 +340,11 @@
 }
 
 .achievement {
-  background: linear-gradient(135deg, rgba(89, 253, 124, 0.1), rgba(42, 138, 58, 0.2));
+  background: linear-gradient(
+    135deg,
+    rgba(89, 253, 124, 0.1),
+    rgba(42, 138, 58, 0.2)
+  );
   border-radius: 15px;
   padding: 15px;
   display: flex;
@@ -334,7 +363,7 @@
 }
 
 .achievementTitle {
-  color: #59FD7C;
+  color: #59fd7c;
   font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -361,11 +390,11 @@
   text-align: center;
   padding: 60px;
   font-size: 24px;
-  color: #59FD7C;
+  color: #59fd7c;
   background: rgba(0, 0, 0, 0.7);
   border-radius: 20px;
   margin: 50px;
-  border: 1px solid #59FD7C;
+  border: 1px solid #59fd7c;
 }
 
 /* Адаптив */
@@ -373,26 +402,26 @@
   .profile {
     padding: 20px 15px;
   }
-  
+
   .header {
     flex-direction: column;
     gap: 15px;
     text-align: center;
   }
-  
+
   .characterCard {
     flex-direction: column;
     text-align: center;
   }
-  
+
   .statsGrid {
     grid-template-columns: 1fr;
   }
-  
+
   .achievements {
     grid-template-columns: 1fr;
   }
-  
+
   .xpText {
     flex-direction: column;
     gap: 5px;
