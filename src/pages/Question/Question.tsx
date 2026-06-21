@@ -11,6 +11,7 @@ import ava from "../../assets/images.jpg";
 import { Modal } from "../../components/UI/Modal";
 import { Eye, Calendar, MessageCircle, Send } from "lucide-react";
 import ParticleBackground from "../../components/ParticleBackgound/ParticleBackground";
+import { AsideMenu } from "../../components/UI/AsideMenu";
 
 export const Question = () => {
   const [question, setQuestion] = useState<IQuestion | null>(null);
@@ -19,7 +20,7 @@ export const Question = () => {
   const [openError, setOpenError] = useState<boolean>(false);
   const [errorText, setErrorText] = useState<string>("");
   const [openModal, setOpenModal] = useState<boolean>(false);
-  const [selectedAnswerId, setSelectedAnswerId] = useState<string | null>(null); // ← добавить
+  const [selectedAnswerId, setSelectedAnswerId] = useState<string | null>(null);
   const { id } = useParams();
 
   const sendAnswer = async () => {
@@ -60,6 +61,7 @@ export const Question = () => {
 
   // Функция открытия модалки с выбранным ответом
   const handleOpenModal = (answerId: string) => {
+    console.log("🟢 Кнопка нажата! answerId:", answerId);
     setSelectedAnswerId(answerId);
     setOpenModal(true);
   };
@@ -94,15 +96,14 @@ export const Question = () => {
 
   // Проверка на то, является ли залогиненый пользователь автором вопроса
   const isAuthor = question.authorId === user?.id;
-  const quetionHaveBestAnswer = question.answers.find(
-    (elem) => elem.isBest === true,
-  );
+  const hasBestAnswer = question.answers.some((elem) => elem.isBest === true);
   const formattedDate = new Date(question.createdAt).toLocaleDateString(
     "ru-RU",
   );
 
   return (
     <div className={cls.questionPage}>
+      <AsideMenu />
       <ParticleBackground />
       {openError && <Error children={errorText} />}
       <div className={cls.questionPageContent}>
@@ -110,7 +111,7 @@ export const Question = () => {
         <div className={cls.questionCard}>
           <div className={cls.userInfo}>
             <img
-              src={question.authorAvatar || ava}
+              src={ava || question.authorAvatar}
               alt="avatar"
               className={cls.avatar}
             />
@@ -191,7 +192,7 @@ export const Question = () => {
                 >
                   <div className={cls.answerHeader}>
                     <img
-                      src={answer.authorAvatar || ava}
+                      src={ava || answer.authorAvatar}
                       alt="avatar"
                       className={cls.answerAvatar}
                     />
@@ -207,7 +208,7 @@ export const Question = () => {
                     {answer.isBest && (
                       <span className={cls.bestBadge}>🏆 Лучший ответ</span>
                     )}
-                    {!quetionHaveBestAnswer && isAuthor && (
+                    {!hasBestAnswer && isAuthor && (
                       <Button
                         children="Это лучший ответ"
                         size="small"
@@ -228,10 +229,11 @@ export const Question = () => {
           )}
         </div>
 
-        {/* Модалка ВНЕ map */}
+        {/* Модалка */}
         {openModal && (
           <Modal
             type="accept"
+            isOpen={openModal}
             onClose={() => setOpenModal(false)}
             onAccept={() => {
               if (selectedAnswerId) {

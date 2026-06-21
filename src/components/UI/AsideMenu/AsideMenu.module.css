@@ -1,21 +1,123 @@
-.asideMenu{
-    position: fixed;
-    background-color: rgba(0, 0, 0, 0.5);
-    left: 0;
-    top: 0;
-    bottom: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: start;
-    padding-top: 20px;
-    gap: 15px;
+/* AsideMenu.module.css — с адаптивом */
+
+.asideMenu {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(10px);
+  left: 0;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  padding-top: 20px;
+  gap: 15px;
+  width: 150px;
+  z-index: 1000;
+  transition: transform 0.3s ease;
+  border-right: 1px solid rgba(89, 253, 124, 0.2);
 }
-.asideMenuElement{
-    padding: 10px;
-    transition: all .3s;
+
+.asideMenuElement {
+  padding: 12px 20px;
+  transition: all 0.3s;
+  color: #fff;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 1px;
+  width: 100%;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 8px;
 }
-.asideMenuElement:hover{
-    cursor: pointer;
-    color: #59FD7C;
+
+.asideMenuElement:hover {
+  cursor: pointer;
+  color: #59fd7c;
+  background: rgba(89, 253, 124, 0.1);
+}
+
+/* Бургер-кнопка (скрыта на десктопе) */
+.burgerBtn {
+  display: none;
+  position: fixed;
+  top: 16px;
+  left: 16px;
+  z-index: 1001;
+  background: rgba(0, 0, 0, 0.7);
+  border: 1px solid rgba(89, 253, 124, 0.3);
+  border-radius: 10px;
+  padding: 10px 12px;
+  cursor: pointer;
+  color: #59fd7c;
+  transition: all 0.3s ease;
+}
+
+.burgerBtn:hover {
+  background: rgba(89, 253, 124, 0.15);
+}
+
+.burgerBtn svg {
+  display: block;
+}
+
+/* Оверлей (затемнение фона при открытом меню на мобилках) */
+.overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+/* ===== АДАПТИВ ===== */
+
+/* Планшеты и мобильные */
+@media (max-width: 768px) {
+  /* Показываем бургер */
+  .burgerBtn {
+    display: block;
+  }
+
+  /* Меню скрыто за экраном */
+  .asideMenu {
+    transform: translateX(-100%);
+    width: 280px;
+    padding-top: 70px;
+  }
+
+  /* Меню открыто */
+  .asideMenu.open {
+    transform: translateX(0);
+  }
+
+  /* Оверлей виден */
+  .overlay.open {
+    display: block;
+  }
+
+  .asideMenuElement {
+    font-size: 18px;
+    padding: 16px 24px;
+  }
+}
+
+/* Маленькие телефоны */
+@media (max-width: 480px) {
+  .asideMenu {
+    width: 100%;
+    padding-top: 60px;
+  }
+
+  .asideMenuElement {
+    font-size: 20px;
+    padding: 18px 24px;
+  }
+
+  .burgerBtn {
+    top: 12px;
+    left: 12px;
+    padding: 8px 10px;
+  }
 }

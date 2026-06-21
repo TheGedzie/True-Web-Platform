@@ -1,14 +1,9 @@
-/* Profile.module.css - игровой стиль с зелеными акцентами */
-
 .profile {
   position: relative;
   min-height: 100vh;
   padding: 40px 20px;
-  background: #071107; /* ← ОСНОВНОЙ ТЕМНЫЙ ФОН */
   overflow-x: hidden;
 }
-
-/* Фоновый декоративный элемент (размытый шар) */
 .backgroundGlow {
   position: fixed;
   top: 50%;
@@ -25,9 +20,9 @@
   z-index: 0;
 }
 
-/* Хедер */
 .header {
-  position: relative;
+  max-width: 60%;
+  margin: 0 auto;
   z-index: 2;
   display: flex;
   justify-content: space-between;
@@ -396,17 +391,45 @@
   margin: 50px;
   border: 1px solid #59fd7c;
 }
+.headerButtons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.exitBtn {
+  background: rgb(151, 55, 55);
+  border-color: rgb(194, 36, 36);
+}
+.exitBtn:hover {
+  background: rgb(185, 52, 52) !important;
+}
 
 /* Адаптив */
-@media (max-width: 768px) {
-  .profile {
-    padding: 20px 15px;
-  }
-
+@media (max-width: 1645px) {
   .header {
     flex-direction: column;
     gap: 15px;
     text-align: center;
+  }
+}
+@media (max-width: 1000px) {
+  .headerButtons {
+    flex-direction: column;
+  }
+  .exitBtn,
+  .btn {
+    width: 180px !important;
+  }
+}
+@media (max-width: 430px) {
+  .headerButtons {
+    flex-direction: column;
+  }
+}
+@media (max-width: 768px) {
+  .profile {
+    padding: 20px 15px;
   }
 
   .characterCard {

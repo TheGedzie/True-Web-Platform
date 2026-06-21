@@ -8,13 +8,21 @@ import { Button } from "../../components/UI/Button";
 import { Title } from "../../components/UI/Title";
 import { Error } from "../../components/UI/Error";
 import ParticleBackground from "../../components/ParticleBackgound/ParticleBackground";
+import { useNavigate } from "react-router-dom";
+import testAva from "../../assets/images.jpg";
+import { AsideMenu } from "../../components/UI/AsideMenu";
 
 export const Profile = () => {
   const [user, setUser] = useState<IUser | null>(null);
   const [isEditing, setIsEditing] = useState(false);
   const [editedUser, setEditedUser] = useState<IUser | null>(null);
   const [loading, setLoading] = useState(true);
-
+  const navigate = useNavigate();
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("user");
+    navigate("/register");
+  };
   const loadUser = async () => {
     try {
       const response = await fetchUser();
@@ -107,16 +115,27 @@ export const Profile = () => {
 
   return (
     <div className={cls.profile}>
+      <AsideMenu />
       <ParticleBackground />
-
       <div className={cls.header}>
-        <div className={cls.titleIcon}></div>
+        <div className={cls.titleIcon}>🎮</div>
         <Title level="h1" size="large" color="white">
-          Профиль игрока
+          Профиль пользователя
         </Title>
-        {!isEditing && (
-          <Button onClick={() => setIsEditing(true)}>✏️ Редактировать</Button>
-        )}
+        <div className={cls.headerButtons}>
+          {!isEditing && (
+            <Button customClass={cls.btn} onClick={() => setIsEditing(true)}>
+              ✏️ Редактировать
+            </Button>
+          )}
+          <Button
+            onClick={handleLogout}
+            customClass={cls.exitBtn}
+            variant="primary"
+          >
+            🚪 Выйти
+          </Button>
+        </div>
       </div>
 
       <div className={cls.content}>
@@ -125,7 +144,7 @@ export const Profile = () => {
           <div className={cls.avatarSection}>
             <div className={cls.avatarBorder}>
               <img
-                src={user.avatar || "/avatars/default.png"}
+                src={testAva || user.avatar}
                 alt={user.username}
                 className={cls.avatar}
               />
@@ -174,7 +193,7 @@ export const Profile = () => {
 
           <div className={cls.statsGrid}>
             <div className={cls.statItem}>
-              <label>👤 Имя персонажа</label>
+              <label>👤 Имя пользователя</label>
               {isEditing ? (
                 <input
                   value={editedUser?.username || ""}

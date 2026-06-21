@@ -4,17 +4,13 @@ import { Badge } from "../../components/UI/Badge";
 import { Button } from "../../components/UI/Button";
 import { Title } from "../../components/UI/Title";
 import { useNavigate } from "react-router-dom";
-import GreenFire from "../../components/ParticleBackgound/ParticleBackground";
-
+import ParticleBackground from "../../components/ParticleBackgound/ParticleBackground";
 export const Start = () => {
   const navigate = useNavigate();
 
   return (
     <div className={cls.StartPg}>
-      {/* <div className={cls.bg}>
-        <GreenFire />
-      </div> */}
-
+      <ParticleBackground />
       <section className={cls.hero}>
         <div className={cls.heroLeft}>
           <div className={cls.BadgeWrapper}>
@@ -46,7 +42,7 @@ export const Start = () => {
 
         <div className={cls.heroRight}>
           <Title children="TrueWebPlatform" size="large" color="white" />
-          <p>Прокачай себя до Senior через игру</p>
+          <p>Получи новые навыки и знания</p>
 
           <Button
             children="Начать"
@@ -60,12 +56,12 @@ export const Start = () => {
       <section className={cls.about}>
         <div className={cls.blur}></div>
 
-        <h2>Учись как в игре</h2>
+        <h2>Учись на платформе</h2>
 
         <div className={cls.cards}>
-          <div>⚔ PvP coding</div>
-          <div>🔥 Реальные задачи</div>
-          <div>🚀 Быстрый рост</div>
+          <div>💬Форум</div>
+          <div>🔥Реальные задачи</div>
+          <div>🚀Быстрый рост</div>
         </div>
       </section>
 

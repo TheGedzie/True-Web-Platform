@@ -8,6 +8,7 @@ import { fetchChellenges } from "../../services/ChellengeService";
 import { Title } from "../../components/UI/Title";
 import { Button } from "../../components/UI/Button";
 import ParticleBackground from "../../components/ParticleBackgound/ParticleBackground";
+import { AsideMenu } from "../../components/UI/AsideMenu";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -92,6 +93,7 @@ export const Challenges = () => {
       transition={{ duration: 0.4 }}
     >
       <ParticleBackground />
+      <AsideMenu />
 
       <motion.div
         className={cls.heroContainer}
