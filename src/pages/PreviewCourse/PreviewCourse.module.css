@@ -1,0 +1,445 @@
+/* previewCourse.module.css — с адаптивом */
+
+.PreviewCourse {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0d1f0d 0%, #0a150a 100%);
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  padding: 40px 20px;
+}
+
+/* Hero секция */
+.hero {
+  display: flex;
+  position: relative;
+  width: 100%;
+  min-height: 90vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  backdrop-filter: blur(10px);
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.hero h1 {
+  max-width: 600px;
+  animation: textGlow 2s ease-in-out infinite;
+  font-size: 48px;
+}
+
+@keyframes textGlow {
+  0%,
+  100% {
+    opacity: 0.9;
+    text-shadow:
+      0 0 20px #59fd7c,
+      0 0 40px #46774c;
+  }
+  50% {
+    opacity: 1;
+    text-shadow:
+      0 0 30px #59fd7c,
+      0 0 60px #59fd7c,
+      0 0 80px #46774c;
+  }
+}
+
+/* Секция описания */
+.description {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 50px 40px;
+  gap: 40px;
+  align-items: center;
+}
+
+.description h2 {
+  grid-column: 1 / -1;
+  margin-bottom: 20px;
+  font-size: 36px;
+  background: linear-gradient(90deg, #59fd7c, #46774c, #59fd7c);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 0 30px rgba(89, 253, 124, 0.3);
+  text-align: center;
+}
+
+.testVideo {
+  background: linear-gradient(135deg, #1a3a1a, #0d1f0d);
+  border-radius: 20px;
+  padding: 80px 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px dashed #59fd7c;
+  transition: all 0.3s ease;
+  min-height: 250px;
+  box-shadow: 0 0 30px rgba(89, 253, 124, 0.1);
+}
+
+.testVideo:hover {
+  border-color: #59fd7c;
+  transform: scale(1.02);
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.7),
+    0 0 40px rgba(89, 253, 124, 0.3);
+  background: linear-gradient(135deg, #1f4a1f, #133013);
+}
+
+.testVideo span {
+  color: #59fd7c;
+  font-size: 24px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  text-shadow: 0 0 20px rgba(89, 253, 124, 0.5);
+}
+
+.descriptionText {
+  color: #d4f5d4;
+  font-size: 18px;
+  line-height: 1.8;
+  padding: 30px;
+  background: linear-gradient(
+    135deg,
+    rgba(70, 119, 76, 0.1),
+    rgba(89, 253, 124, 0.05)
+  );
+  border-radius: 20px;
+  border-left: 4px solid #59fd7c;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Секция "Что входит в курс" */
+.intoCourse {
+  background: linear-gradient(
+    135deg,
+    rgba(70, 119, 76, 0.08) 0%,
+    rgba(89, 253, 124, 0.03) 100%
+  );
+  border-radius: 20px;
+  padding: 40px;
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(89, 253, 124, 0.15);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.intoCourse h2 {
+  margin-bottom: 20px;
+  font-size: 32px;
+  color: #fff;
+  text-shadow: 0 0 20px rgba(89, 253, 124, 0.4);
+}
+
+.intoCourse hr {
+  border: none;
+  height: 2px;
+  background: linear-gradient(90deg, #59fd7c, #46774c, transparent);
+  margin: 20px 0 30px 0;
+  box-shadow: 0 0 10px #59fd7c;
+}
+
+.intoCourse p {
+  color: #b8e6b8;
+  font-size: 18px;
+  padding: 15px 20px;
+  margin: 10px 0;
+  background: rgba(70, 119, 76, 0.1);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  cursor: default;
+  border: 1px solid rgba(89, 253, 124, 0.1);
+}
+
+.intoCourse p:hover {
+  background: rgba(89, 253, 124, 0.15);
+  border-color: #59fd7c;
+  color: #fff;
+  transform: translateX(10px);
+  box-shadow:
+    0 5px 15px rgba(89, 253, 124, 0.2),
+    0 0 20px rgba(89, 253, 124, 0.1);
+}
+
+.arrow {
+  position: absolute;
+  max-width: 60px;
+  bottom: 40px;
+  animation: arrowAnimate 1.5s ease-in-out infinite;
+}
+
+@keyframes arrowAnimate {
+  0% {
+    bottom: 40px;
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+  100% {
+    bottom: 10px;
+    opacity: 0;
+  }
+}
+
+/* ===== АДАПТИВ ===== */
+
+/* Планшеты */
+@media (max-width: 1024px) {
+  .PreviewCourse {
+    gap: 40px;
+    padding: 30px 15px;
+  }
+
+  .hero h1 {
+    font-size: 38px;
+  }
+
+  .description {
+    padding: 30px 20px;
+    gap: 30px;
+  }
+
+  .description h2 {
+    font-size: 30px;
+  }
+
+  .testVideo {
+    padding: 60px 30px;
+    min-height: 200px;
+  }
+
+  .testVideo span {
+    font-size: 20px;
+  }
+
+  .descriptionText {
+    font-size: 16px;
+    padding: 20px;
+  }
+
+  .intoCourse {
+    padding: 30px;
+  }
+
+  .intoCourse h2 {
+    font-size: 28px;
+  }
+
+  .intoCourse p {
+    font-size: 16px;
+    padding: 12px 16px;
+  }
+
+  .arrow {
+    max-width: 50px;
+    bottom: 30px;
+  }
+
+  @keyframes arrowAnimate {
+    0% {
+      bottom: 30px;
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.4;
+    }
+    100% {
+      bottom: 10px;
+      opacity: 0;
+    }
+  }
+}
+
+/* Мобильные устройства */
+@media (max-width: 768px) {
+  .PreviewCourse {
+    gap: 30px;
+    padding: 20px 12px;
+  }
+
+  .hero {
+    min-height: 50vh;
+    padding: 30px 15px;
+    gap: 30px;
+  }
+
+  .hero h1 {
+    font-size: 30px;
+    max-width: 100%;
+  }
+
+  .hero button {
+    font-size: 16px;
+    padding: 14px 28px;
+  }
+
+  .description {
+    grid-template-columns: 1fr;
+    padding: 20px 15px;
+    gap: 20px;
+  }
+
+  .description h2 {
+    font-size: 24px;
+    grid-column: 1;
+  }
+
+  .testVideo {
+    padding: 40px 20px;
+    min-height: 150px;
+    border-radius: 16px;
+  }
+
+  .testVideo span {
+    font-size: 16px;
+    letter-spacing: 2px;
+  }
+
+  .descriptionText {
+    font-size: 15px;
+    padding: 16px;
+    border-left-width: 3px;
+    border-radius: 16px;
+  }
+
+  .intoCourse {
+    padding: 20px;
+    border-radius: 16px;
+  }
+
+  .intoCourse h2 {
+    font-size: 22px;
+  }
+
+  .intoCourse hr {
+    margin: 15px 0 20px 0;
+  }
+
+  .intoCourse p {
+    font-size: 15px;
+    padding: 10px 14px;
+    margin: 8px 0;
+    border-radius: 10px;
+  }
+
+  .intoCourse p:hover {
+    transform: translateX(5px);
+  }
+
+  .arrow {
+    max-width: 40px;
+    bottom: 20px;
+  }
+
+  @keyframes arrowAnimate {
+    0% {
+      bottom: 20px;
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.4;
+    }
+    100% {
+      bottom: 5px;
+      opacity: 0;
+    }
+  }
+}
+
+/* Маленькие телефоны */
+@media (max-width: 480px) {
+  .PreviewCourse {
+    gap: 20px;
+    padding: 12px 8px;
+  }
+
+  .hero {
+    min-height: 40vh;
+    padding: 20px 10px;
+    gap: 20px;
+  }
+
+  .hero h1 {
+    font-size: 24px;
+  }
+
+  .hero button {
+    font-size: 14px;
+    padding: 12px 24px;
+  }
+
+  .description {
+    padding: 10px 10px;
+    gap: 15px;
+  }
+
+  .description h2 {
+    font-size: 20px;
+  }
+
+  .testVideo {
+    padding: 30px 15px;
+    min-height: 120px;
+    border-radius: 12px;
+  }
+
+  .testVideo span {
+    font-size: 14px;
+    letter-spacing: 1px;
+  }
+
+  .descriptionText {
+    font-size: 14px;
+    padding: 14px;
+    border-left-width: 2px;
+    border-radius: 12px;
+  }
+
+  .intoCourse {
+    padding: 15px;
+    border-radius: 12px;
+  }
+
+  .intoCourse h2 {
+    font-size: 18px;
+  }
+
+  .intoCourse hr {
+    margin: 10px 0 15px 0;
+  }
+
+  .intoCourse p {
+    font-size: 14px;
+    padding: 8px 12px;
+    margin: 6px 0;
+    border-radius: 8px;
+  }
+
+  .intoCourse p:hover {
+    transform: none;
+  }
+
+  .arrow {
+    max-width: 30px;
+    bottom: 15px;
+  }
+
+  @keyframes arrowAnimate {
+    0% {
+      bottom: 15px;
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.4;
+    }
+    100% {
+      bottom: 5px;
+      opacity: 0;
+    }
+  }
+}

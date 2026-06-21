@@ -1,0 +1,238 @@
+{
+  "courses": [
+    {
+      "id": "1",
+      "name": "Как работает платформа ?",
+      "shortcut": "Platform",
+      "difficult": "Очень просто",
+      "color": "red",
+      "pages": 4,
+      "content": [
+        "<div class='lesson-content'><h1>🚀 Добро пожаловать на платформу!</h1><p>Наша платформа создана для того, чтобы сделать обучение веб-разработке максимально эффективным. Здесь ты найдешь структурированные курсы, интерактивные задания и понятные объяснения.</p><div class='info-block'><strong>💡 Знаешь ли ты?</strong><br/>Система прогресса автоматически отмечает курс пройденным, как только ты доходишь до последней страницы. Никаких лишних кнопок!</div><h2>Как устроено обучение?</h2><ul><li>📚 <strong>Структурированные курсы</strong> — каждый курс разбит на небольшие страницы</li><li>🎯 <strong>Система прогресса</strong> — наглядный прогресс-бар показывает твои успехи</li><li>🏆 <strong>Награды и XP</strong> — зарабатывай очки опыта за пройденные курсы</li><li>🔄 <strong>Доступ навсегда</strong> — возвращайся к любым материалам в любое время</li></ul><div class='example-code'><h3>📊 Пример расчета прогресса:</h3><pre><code>// Всего курсов: 5\n// Пройдено курсов: 3\n\nprogress = (3 / 5) * 100 = 60%</code></pre></div><p>Начинаешь с ранга <span class='highlight'>'Новичок'</span>, а можешь дойти до <span class='highlight'>'Мастер кода'</span>! Чем больше курсов пройдешь, тем выше твой ранг.</p></div>",
+        "<div class='lesson-content'><h1>🎮 Интерфейс и навигация</h1><p>Как пользоваться платформой? Все просто!</p><div class='steps'><div class='step'><span class='step-number'>1</span><strong>Главный экран (Welcome)</strong><br/>Ты видишь список всех доступных курсов. Каждый курс отмечен своим цветом и сложностью.</div><div class='step'><span class='step-number'>2</span><strong>Карточка курса</strong><br/>Нажми на карточку — попадешь на страницу обучения</div><div class='step'><span class='step-number'>3</span><strong>Навигация по страницам</strong><br/>Кнопки 'Назад' и 'Далее' для перемещения между страницами</div><div class='step'><span class='step-number'>4</span><strong>Завершение курса</strong><br/>Кнопка 'Завершить' появляется только на последней странице</div></div><div class='info-block yellow'><strong>🎁 Бонус!</strong> После прохождения курса ты получаешь +100 XP и открываешь новый уровень!</div><h2>Боковое меню (AsideMenu)</h2><ul><li>📖 <strong>Мои курсы</strong> — активные и пройденные курсы</li><li>📊 <strong>Статистика</strong> — время обучения, прочитанные страницы</li><li>🏅 <strong>Достижения</strong> — твои награды</li><li>⚙️ <strong>Настройки профиля</strong> — аватар, имя, настройки</li></ul><div class='example-code'><h3>Пример интерфейса:</h3><pre><code>&lt;div class='progress-bar'&gt;\n  &lt;div class='progress-fill' style='width: 60%'&gt;&lt;/div&gt;\n&lt;/div&gt;</code></pre></div></div>",
+        "<div class='lesson-content'><h1>💬 Стена (Wall) — сообщество студентов</h1><p>Стена — это особенность нашей платформы, которая объединяет студентов в сообщество. Это как лента в соцсети, только полностью посвящена учебе!</p><div class='features-grid'><div class='feature'><h3>📝 Публикации</h3><p>Делитесь успехами, проектами и вопросами</p></div><div class='feature'><h3>💬 Комментарии</h3><p>Обсуждайте, помогайте, получайте обратную связь</p></div><div class='feature'><h3>❤️ Лайки</h3><p>Оценивайте полезные посты других студентов</p></div><div class='feature'><h3>📨 Личные сообщения</h3><p>Общайтесь напрямую с другими студентами</p></div></div><div class='info-block'><strong>🌟 Золотое правило Стены:</strong> помогай другим, будь вежлив, не спамь. Модераторы следят за порядком, но атмосфера очень дружелюбная!</div><div class='example-post'><h3>Пример поста на Стене:</h3><div class='post'><span class='post-author'>TheGedzie</span><p>Только что закончил курс по JavaScript! 🎉 Теперь могу делать интерактивные сайты. Спросите меня что угодно по JS!</p><div class='post-stats'>❤️ 24 лайка | 💬 8 комментариев</div></div></div><p>Многие наши студенты нашли здесь друзей и даже будущих коллег по работе! Не стесняйся быть активным — сообщество ждет тебя.</p></div>",
+        "<div class='lesson-content'><h1>💰 Бонусная система и прокачка</h1><div class='xp-bar'><div class='xp-level'>Уровень 1</div><div class='xp-progress'>0/1000 XP</div></div><h2>Как заработать XP?</h2><table class='xp-table'><tr><th>Действие</th><th>XP</th></tr><tr><td>Прохождение курса</td><td>+100 XP</td></tr><tr><td>Ежедневное задание</td><td>+20 XP</td></tr><tr><td>Комментарий на Стене</td><td>+5 XP</td></tr><tr><td>Помощь другому студенту</td><td>+15 XP</td></tr></table><div class='shop-section'><h2>🛒 Магазин платформы</h2><div class='shop-items'><div class='shop-item'><span>✨ Уникальная рамка аватара</span><span class='price'>300 XP</span></div><div class='shop-item'><span>🎨 Необычные эмодзи</span><span class='price'>150 XP</span></div><div class='shop-item'><span>🖱️ Скин курсора</span><span class='price'>200 XP</span></div><div class='shop-item'><span>🎥 Доступ к закрытому вебинару</span><span class='price'>500 XP</span></div></div></div><div class='info-block green'><strong>🔥 Ежедневные задания:</strong><br/>• Прочитай 3 страницы сегодня → +20 XP<br/>• Оставь комментарий на Стене → +10 XP<br/>• Поделись проектом → +50 XP</div><div class='ranking'><h3>🏆 Топ студентов месяца:</h3><ol><li>coder_katya — 2450 XP</li><li>js_master — 2100 XP</li><li>web_newbie — 1800 XP</li></ol></div><p>Соревнуйся с друзьями и поднимайся в рейтинге! Каждый месяц топ-3 получают призы от платформы.</p></div>"
+      ],
+      "description": "Узнай, как устроена платформа, как пользоваться всеми функциями и быстро стартовать в обучении",
+      "preview": "/previews/platform.gif",
+      "image": [
+        "/images/platform1.jpg",
+        "/images/platform2.jpg",
+        "/images/platform3.jpg"
+      ],
+      "author": "TheGedize",
+      "duration": "15 минут",
+      "intoCourse": [
+        "Обзор платформы и система прогресса",
+        "Интерфейс и навигация",
+        "Стена (Wall) — сообщество",
+        "Бонусы, XP и магазин"
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Кто такой веб-разработчик ?",
+      "shortcut": "Web-developer",
+      "difficult": "Обучение",
+      "color": "blue",
+      "pages": 4,
+      "content": [
+        "<div class='lesson-content'><h1>👨‍💻 Кто такой веб-разработчик?</h1><p>Веб-разработчик — это специалист, который создает веб-сайты и веб-приложения. Но давай разберемся подробнее!</p><div class='role-cards'><div class='role-card frontend'><h3>🎨 Frontend</h3><p>Отвечает за то, что видит пользователь: кнопки, анимации, верстку</p><span class='tech-stack'>HTML, CSS, JS, React</span></div><div class='role-card backend'><h3>⚙️ Backend</h3><p>Работает с серверами, базами данных, логикой приложения</p><span class='tech-stack'>Node.js, Python, SQL, MongoDB</span></div><div class='role-card fullstack'><h3>🚀 Fullstack</h3><p>Умеет и фронтенд, и бэкенд</p><span class='tech-stack'>Frontend + Backend</span></div></div><div class='salary-info'><h2>💰 Зарплаты в России (2025)</h2><ul><li><strong>Junior</strong> — 80 000 - 120 000 ₽</li><li><strong>Middle</strong> — 150 000 - 250 000 ₽</li><li><strong>Senior</strong> — 280 000 - 400 000+ ₽</li></ul><p class='note'>* Данные с hh.ru и Habr Career</p></div><div class='example-code'><h3>🎯 Пример работы фронтенда:</h3><pre><code>&lt;button onclick='alert(\"Hello World!\")'&gt;\n  Нажми на меня!\n&lt;/button&gt;</code></pre><p><button class='demo-btn' onclick=\"alert('Hello World!')\">👉 Попробуй сам!</button></p></div></div>",
+        "<div class='lesson-content'><h1>🧠 Навыки начинающего разработчика</h1><p>Базовый джентльменский набор:</p><div class='skills-tree'><div class='skill'><div class='skill-icon'>🏗️</div><div><strong>HTML</strong><br/>Каркас дома</div></div><div class='skill'><div class='skill-icon'>🎨</div><div><strong>CSS</strong><br/>Интерьер и отделка</div></div><div class='skill'><div class='skill-icon'>⚡</div><div><strong>JavaScript</strong><br/>Электрика и сантехника</div></div><div class='skill'><div class='skill-icon'>📦</div><div><strong>Git</strong><br/>Система контроля версий</div></div></div><div class='info-block'><strong>🔍 Важно!</strong> 80% рабочего времени разработчик читает код (свой или чужой) и только 20% пишет новый. Так что учись читать и понимать чужой код!</div><h2>Софт-скиллы, которые реально нужны:</h2><ul><li>🔍 <strong>Умение гуглить</strong> — серьезно, это главный навык!</li><li>📖 <strong>Читать документацию</strong> — ответы есть везде</li><li>🐛 <strong>Не бояться ошибок</strong> — ошибки — это опыт</li><li>💬 <strong>Работа в команде</strong> — ревью кода и обсуждения</li><li>🌍 <strong>Английский</strong> — хотя бы на уровне чтения</li></ul><div class='example-code'><h3>📝 Как НЕ надо писать код:</h3><pre><code>let a = 5;\nlet b = 10;\nlet c = a + b; // Что такое c?</code></pre><h3>✅ Как надо:</h3><pre><code>const userAge = 5;\nconst userBonus = 10;\nconst totalPoints = userAge + userBonus;</code></pre></div></div>",
+        "<div class='lesson-content'><h1>🗺️ С чего начать путь?</h1><p>Многие новички совершают ошибку: пытаются выучить всё и сразу. Не надо!</p><div class='roadmap'><div class='roadmap-step'><span class='step-month'>Месяц 1-2</span><h3>HTML + CSS</h3><p>Сверстай свой первый сайт-визитку</p></div><div class='roadmap-step'><span class='step-month'>Месяц 3-4</span><h3>JavaScript</h3><p>Добавь интерактив: калькулятор, to-do list</p></div><div class='roadmap-step'><span class='step-month'>Месяц 5-6</span><h3>React / Vue</h3><p>Изучи популярный фреймворк</p></div><div class='roadmap-step'><span class='step-month'>Месяц 6+</span><h3>Пет-проекты</h3><p>Сделай портфолио: магазин, блог, погодное приложение</p></div></div><div class='info-block green'><strong>✅ Пет-проекты для портфолио:</strong><br/>• Сайт-визитка<br/>• To-do лист<br/>• Погодное приложение (API)<br/>• Простой интернет-магазин</div><div class='example-code'><h3>💡 Пример кода to-do листа:</h3><pre><code>const todos = [];\n\nfunction addTodo(task) {\n  todos.push({ task, completed: false });\n  console.log(`Добавлено: ${task}`);\n}\n\naddTodo('Выучить JavaScript');\n// Вывод: Добавлено: Выучить JavaScript</code></pre></div></div>",
+        "<div class='lesson-content'><h1>🚀 Карьерные перспективы</h1><div class='career-path'><div class='path-node'><strong>Junior</strong><span>0-2 года</span></div><div class='path-arrow'>→</div><div class='path-node'><strong>Middle</strong><span>2-4 года</span></div><div class='path-arrow'>→</div><div class='path-node'><strong>Senior</strong><span>4+ лет</span></div></div><h2>Куда расти дальше?</h2><div class='career-options'><div><h3>👔 Team Lead</h3><p>Управление командой, менторство, код-ревью</p></div><div><h3>🏗️ Architect</h3><p>Проектирование сложных систем, выбор технологий</p></div><div><h3>📦 Product Manager</h3><p>Если надоело программировать, но осталось понимание продукта</p></div><div><h3>💼 Freelance</h3><p>Своя студия или заказы на биржах</p></div></div><div class='info-block yellow'><strong>🌍 Удаленка за границу:</strong><br/>Многие разработчики работают на компании из США, Европы или ОАЭ. Зарплаты в валюте — отличная мотивация учить английский!</div><div class='famous-quote'><p>\"Самый лучший способ предсказать будущее — создать его самому\"</p><span>— Алан Кей, пионер в области OOP</span></div><div class='motivation'><h3>🎯 Главный совет:</h3><p>Начинай делать проекты как можно раньше. Не жди, пока \"выучишь всё\". Реальный опыт ценнее теории. И не бойся ошибок — каждый senior когда-то был junior, который ломал боевую базу данных 🤫</p></div></div>"
+      ],
+      "description": "Погрузись в профессию веб-разработчика: узнай, чем занимаются специалисты, какие навыки нужны",
+      "preview": "/previews/webdev.gif",
+      "image": [
+        "/images/webdev1.jpg",
+        "/images/webdev2.jpg"
+      ],
+      "author": "TheGedize",
+      "duration": "20 минут",
+      "intoCourse": [
+        "Кто такой веб-разработчик и специализации",
+        "Навыки и технологии",
+        "Roadmap: с чего начать обучение",
+        "Карьерные пути и перспективы"
+      ]
+    },
+    {
+      "id": "3",
+      "name": "История веб-разработки",
+      "shortcut": "WEB",
+      "difficult": "Обучение",
+      "color": "purple",
+      "pages": 4,
+      "content": [
+        "<div class='lesson-content'><h1>🌐 Рождение веба (1989-1993)</h1><div class='history-card'><div class='date'>1989</div><div class='event'><strong>Тим Бернерс-Ли</strong> предлагает проект World Wide Web в ЦЕРНе</div></div><div class='history-card'><div class='date'>1991</div><div class='event'><strong>Первый веб-сайт</strong> http://info.cern.ch — просто текстовая страница</div></div><div class='history-card'><div class='date'>1993</div><div class='event'><strong>Mosaic</strong> — первый графический браузер</div></div><div class='info-block'><strong>💡 Интересный факт:</strong> Тим Бернер-Ли мог стать миллиардером, если бы запатентовал веб, но он сознательно сделал технологию открытой и бесплатной для всех.</div><div class='tech-birth'><h2>Три технологии, на которых держится веб:</h2><ul><li><strong>HTML</strong> — язык разметки (гипертекст)</li><li><strong>HTTP</strong> — протокол передачи данных</li><li><strong>URL</strong> — адресация документов</li></ul></div><div class='example-code'><h3>Как выглядела первая веб-страница:</h3><pre><code>&lt;HEADER&gt;\n  &lt;TITLE&gt;World Wide Web&lt;/TITLE&gt;\n&lt;/HEADER&gt;\n&lt;BODY&gt;\n  &lt;H1&gt;World Wide Web&lt;/H1&gt;\n  The WorldWideWeb (W3) is a...\n&lt;/BODY&gt;</code></pre></div></div>",
+        "<div class='lesson-content'><h1>⚔️ Война браузеров и рождение JS (1995-2005)</h1><div class='browser-war'><div class='browser netscape'>Netscape Navigator</div><div class='vs'>VS</div><div class='browser ie'>Internet Explorer</div></div><div class='history-card'><div class='date'>1995</div><div class='event'><strong>JavaScript</strong> — Брендан Эйх написал язык за 10 дней!</div></div><div class='history-card'><div class='date'>1996</div><div class='event'><strong>CSS</strong> — отделение стилей от структуры</div></div><div class='history-card'><div class='date'>2005</div><div class='event'><strong>Web 2.0</strong> — переход к динамическим приложениям</div></div><div class='example-code'><h3>Первый код на JavaScript:</h3><pre><code>function validateForm() {\n  if(document.forms[0].name.value === \"\") {\n    alert(\"Please enter your name\");\n    return false;\n  }\n  return true;\n}</code></pre></div><div class='info-block yellow'><strong>📸 Флеш-эпоха:</strong> В 2000-х многие сайты были полностью сделаны на Flash — с анимациями, загрузчиками, плеерами. Сейчас Flash мертв, и это хорошо для безопасности и производительности.</div></div>",
+        "<div class='lesson-content'><h1>⚛️ Эра фреймворков (2008-2015)</h1><div class='timeline'><div class='milestone'><span class='year'>2008</span><p>Google Chrome и движок <strong>V8</strong> — JavaScript стал быстрым</p></div><div class='milestone'><span class='year'>2009</span><p><strong>Node.js</strong> — JavaScript на сервере</p></div><div class='milestone'><span class='year'>2010</span><p><strong>AngularJS</strong> от Google — первый серьезный фреймворк</p></div><div class='milestone'><span class='year'>2013</span><p><strong>React</strong> от Facebook — революция в подходе к UI</p></div><div class='milestone'><span class='year'>2014</span><p><strong>Vue.js</strong> — простой и элегантный фреймворк</p></div></div><div class='example-code'><h3>Компонент на React:</h3><pre><code>function Welcome(props) {\n  return &lt;h1&gt;Привет, {props.name}!&lt;/h1&gt;;\n}\n\n// Использование:\n&lt;Welcome name=\"Анна\" /&gt;</code></pre></div><div class='info-block'><strong>📱 Адаптивный дизайн:</strong> С 2010-х сайты должны корректно выглядеть на всех устройствах — от компьютера до телефона. Появились мобильные версии и медиа-запросы в CSS.</div></div>",
+        "<div class='lesson-content'><h1>🚀 Современный веб и будущее (2016 — сейчас)</h1><div class='modern-tech'><div class='tech-card'><h3>PWA</h3><p>Прогрессивные веб-приложения — сайты работают как нативные приложения</p></div><div class='tech-card'><h3>WebAssembly</h3><p>C++, Rust, Go в браузере — почти нативная производительность</p></div><div class='tech-card'><h3>TypeScript</h3><p>Типизированный JS — ловит ошибки до запуска</p></div><div class='tech-card'><h3>Next.js / Remix</h3><p>Серверные компоненты и максимальная производительность</p></div></div><div class='future-section'><h2>🔮 Что дальше?</h2><ul><li>🌐 <strong>Web3 и блокчейн</strong> — децентрализация</li><li>🎙️ <strong>Голосовой интерфейс</strong> — управление голосом</li><li>🥽 <strong>WebXR</strong> — виртуальная и дополненная реальность прямо в браузере</li><li>🤖 <strong>AI-ассистенты</strong> — GitHub Copilot уже пишет код за нас</li></ul></div><div class='fun-facts'><h2>🎉 Забавные факты:</h2><ul><li>Первое изображение в вебе — фото женской поп-группы 😄</li><li>Первый баннер кликнули 44% увидевших (сейчас 1-2% — успех)</li><li>Тег <code>&lt;blink&gt;</code> реально существовал и заставлял текст мигать</li><li>Раньше закругленные углы делали через костыли с картинками</li></ul></div><div class='info-block green'><strong>✨ Главное:</strong> Веб остается самой открытой платформой в мире — любой человек может опубликовать что угодно, просто создав сайт. И ты теперь часть этой истории!</div></div>"
+      ],
+      "description": "Путешествие от первой веб-страницы до современных фреймворков",
+      "preview": "/previews/history.gif",
+      "image": [
+        "/images/history1.jpg",
+        "/images/history2.jpg",
+        "/images/history3.jpg"
+      ],
+      "author": "TheGedize",
+      "duration": "25 минут",
+      "intoCourse": [
+        "Рождение веба (1989-1993)",
+        "Война браузеров и рождение JS (1995-2005)",
+        "Эра фреймворков (2008-2015)",
+        "Современный веб и будущее (2016 - сейчас)"
+      ]
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "username": "TheGedzie",
+      "email": "gedzie06@gmail.com",
+      "fullName": "Дмитрий Попов",
+      "avatar": "/avatars/default.png",
+      "level": 5,
+      "totalXP": 1250,
+      "completedCourses": [
+        1,
+        2
+      ],
+      "registrationDate": "2025-01-15",
+      "bio": "Начинающий веб-разработчик, учусь создавать крутые сайты! 🚀",
+      "skills": [
+        "HTML",
+        "CSS"
+      ],
+      "social": {
+        "github": "https://github.com/thegedzie",
+        "telegram": "@thegedzie",
+        "website": "https://thegedzie.dev"
+      },
+      "settings": {
+        "theme": "dark",
+        "notifications": true,
+        "language": "ru"
+      }
+    }
+  ],
+  "challenges": [
+    {
+      "id": "1",
+      "title": "Создай красную кнопку",
+      "language": "html",
+      "difficulty": "easy",
+      "xpReward": 50,
+      "category": "HTML/CSS",
+      "description": "Создай кнопку красного цвета с текстом 'Нажми меня'",
+      "initialCode": "<button>Нажми меня</button>",
+      "expectedOutput": "<button style='background: red; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;'>Нажми меня</button>",
+      "hints": [
+        "Используй атрибут style",
+        "Добавь background: red",
+        "Не забудь про padding для красоты"
+      ],
+      "testCases": [
+        {
+          "description": "Кнопка должна быть красной",
+          "check": "button.style.background === 'red'"
+        },
+        {
+          "description": "Кнопка должна быть красной",
+          "check": "const btn = document.querySelector('button'); const bg = btn?.style?.background || btn?.style?.backgroundColor; bg === 'red' || bg === 'rgb(255, 0, 0)'"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "title": "JavaScript: Сумма чисел",
+      "language": "javascript",
+      "difficulty": "easy",
+      "xpReward": 75,
+      "category": "JavaScript",
+      "description": "Напиши функцию sum, которая принимает два числа и возвращает их сумму",
+      "initialCode": "function sum(a, b) {\n  // Твой код здесь\n  \n}",
+      "expectedOutput": "sum(2, 3) === 5",
+      "hints": [
+        "Используй оператор +",
+        "Не забудь return"
+      ],
+      "testCases": [
+        {
+          "description": "sum(2, 3) должно вернуть 5",
+          "check": "sum(2, 3) === 5"
+        },
+        {
+          "description": "sum(10, 20) должно вернуть 30",
+          "check": "sum(10, 20) === 30"
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "title": "Создай карточку товара",
+      "language": "html",
+      "difficulty": "medium",
+      "xpReward": 150,
+      "category": "HTML/CSS",
+      "description": "Создай карточку товара: изображение 100x100, название 'Крутой товар', цена '1000 руб', кнопка 'Купить'",
+      "initialCode": "<div class='card'>\n  \n</div>",
+      "expectedOutput": "<div class='card'><img src='https://via.placeholder.com/100'/><h3>Крутой товар</h3><p>1000 руб</p><button>Купить</button></div>",
+      "hints": [
+        "Используй тег img",
+        "Добавь заголовок h3",
+        "Кнопка должна быть с текстом 'Купить'"
+      ],
+      "testCases": [
+        {
+          "description": "Есть изображение",
+          "check": "document.querySelector('img') !== null"
+        },
+        {
+          "description": "Есть заголовок с текстом 'Крутой товар'",
+          "check": "document.querySelector('h3')?.textContent === 'Крутой товар'"
+        },
+        {
+          "description": "Есть кнопка 'Купить'",
+          "check": "document.querySelector('button')?.textContent === 'Купить'"
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "title": "Массив: найди максимум",
+      "language": "javascript",
+      "difficulty": "medium",
+      "xpReward": 125,
+      "category": "JavaScript",
+      "description": "Напиши функцию findMax, которая принимает массив чисел и возвращает максимальное значение",
+      "initialCode": "function findMax(arr) {\n  // Твой код здесь\n  \n}",
+      "expectedOutput": "findMax([1, 5, 3, 9, 2]) === 9",
+      "hints": [
+        "Используй цикл for",
+        "Или метод Math.max с spread оператором",
+        "Не забудь про пустой массив"
+      ],
+      "testCases": [
+        {
+          "description": "findMax([1,5,3,9,2]) === 9",
+          "check": "findMax([1,5,3,9,2]) === 9"
+        },
+        {
+          "description": "findMax([-1,-5,-3]) === -1",
+          "check": "findMax([-1,-5,-3]) === -1"
+        }
+      ]
+    }
+  ],
+  "userProgress": {
+    "completedChallenges": [
+      2,
+      4
+    ],
+    "totalPoints": 325
+  },
+  "$schema": "./node_modules/json-server/schema.json"
+}

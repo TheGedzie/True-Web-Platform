@@ -1,0 +1,453 @@
+.profile {
+  position: relative;
+  min-height: 100vh;
+  padding: 40px 20px;
+  overflow-x: hidden;
+}
+.backgroundGlow {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(
+    circle,
+    rgba(89, 253, 124, 0.12) 0%,
+    rgba(89, 253, 124, 0) 70%
+  );
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.header {
+  max-width: 60%;
+  margin: 0 auto;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+  padding: 20px 30px;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border: 1px solid #59fd7c;
+  box-shadow: 0 0 20px rgba(89, 253, 124, 0.3);
+}
+
+.titleIcon {
+  font-size: 36px;
+  margin-right: 15px;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+/* Контент */
+.content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+/* Карточка персонажа */
+.characterCard {
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(10px);
+  border-radius: 30px;
+  padding: 30px;
+  border: 2px solid #59fd7c;
+  box-shadow: 0 0 30px rgba(89, 253, 124, 0.2);
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.avatarSection {
+  flex: 0 0 auto;
+  text-align: center;
+}
+
+.avatarBorder {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #59fd7c, #2a8a3a);
+  padding: 3px;
+  margin-bottom: 15px;
+  animation: borderPulse 2s ease-in-out infinite;
+}
+
+@keyframes borderPulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(89, 253, 124, 0.7);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(89, 253, 124, 0);
+  }
+}
+
+.avatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.levelInfo {
+  flex: 1;
+}
+
+.levelBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #ff9800, #f57c00);
+  padding: 10px 25px;
+  border-radius: 50px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  font-size: 20px;
+  color: white;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.levelIcon {
+  font-size: 24px;
+}
+
+.levelNumber {
+  letter-spacing: 1px;
+}
+
+.xpBarContainer {
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+  padding: 15px;
+}
+
+.xpBar {
+  background: #1a3a1a;
+  border-radius: 20px;
+  height: 15px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.xpFill {
+  background: linear-gradient(90deg, #59fd7c, #2a8a3a);
+  border-radius: 20px;
+  height: 100%;
+  transition: width 0.5s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.xpFill::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  animation: shine 2s infinite;
+}
+
+@keyframes shine {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.xpText {
+  display: flex;
+  justify-content: space-between;
+  color: #59fd7c;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* Карточки статов */
+.statCard {
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 25px;
+  border: 1px solid #59fd7c;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.statCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(89, 253, 124, 0.2);
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #59fd7c;
+}
+
+.cardIcon {
+  font-size: 28px;
+}
+
+.cardHeader h3 {
+  color: #59fd7c;
+  font-size: 22px;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Сетка статов */
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.statItem {
+  background: rgba(30, 50, 30, 0.5);
+  padding: 15px;
+  border-radius: 15px;
+  transition: all 0.3s ease;
+}
+
+.statItem:hover {
+  background: rgba(89, 253, 124, 0.1);
+  transform: translateX(5px);
+}
+
+.statItem label {
+  display: block;
+  color: #59fd7c;
+  font-size: 14px;
+  margin-bottom: 8px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.statValue {
+  color: #fff;
+  font-size: 16px;
+  word-break: break-word;
+}
+
+/* Инпуты в игровом стиле */
+.input,
+.textarea {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid #59fd7c;
+  border-radius: 10px;
+  padding: 10px 15px;
+  color: #fff;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.input:focus,
+.textarea:focus {
+  outline: none;
+  border-color: #7aff8c;
+  box-shadow: 0 0 15px rgba(89, 253, 124, 0.3);
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.textarea {
+  resize: vertical;
+  font-family: inherit;
+}
+
+/* Скиллы */
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skill {
+  background: linear-gradient(135deg, #59fd7c, #2a8a3a);
+  color: #0a1a0a;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: bold;
+  transition: transform 0.2s ease;
+}
+
+.skill:hover {
+  transform: scale(1.05);
+}
+
+/* Социальные ссылки */
+.socialLink {
+  color: #59fd7c;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.socialLink:hover {
+  color: #7aff8c;
+  text-shadow: 0 0 5px #59fd7c;
+  transform: translateX(5px);
+}
+
+/* Достижения */
+.achievements {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+}
+
+.achievement {
+  background: linear-gradient(
+    135deg,
+    rgba(89, 253, 124, 0.1),
+    rgba(42, 138, 58, 0.2)
+  );
+  border-radius: 15px;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  transition: all 0.3s ease;
+}
+
+.achievement:hover {
+  transform: scale(1.05);
+  background: rgba(89, 253, 124, 0.2);
+}
+
+.achievementIcon {
+  font-size: 36px;
+}
+
+.achievementTitle {
+  color: #59fd7c;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 5px;
+}
+
+.achievementValue {
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Кнопки */
+.actions {
+  display: flex;
+  gap: 15px;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+/* Загрузка и ошибки */
+.loading,
+.error {
+  text-align: center;
+  padding: 60px;
+  font-size: 24px;
+  color: #59fd7c;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 20px;
+  margin: 50px;
+  border: 1px solid #59fd7c;
+}
+.headerButtons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.exitBtn {
+  background: rgb(151, 55, 55);
+  border-color: rgb(194, 36, 36);
+}
+.exitBtn:hover {
+  background: rgb(185, 52, 52) !important;
+}
+
+/* Адаптив */
+@media (max-width: 1645px) {
+  .header {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+}
+@media (max-width: 1000px) {
+  .headerButtons {
+    flex-direction: column;
+  }
+  .exitBtn,
+  .btn {
+    width: 180px !important;
+  }
+}
+@media (max-width: 430px) {
+  .headerButtons {
+    flex-direction: column;
+  }
+}
+@media (max-width: 768px) {
+  .profile {
+    padding: 20px 15px;
+  }
+
+  .characterCard {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .statsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .achievements {
+    grid-template-columns: 1fr;
+  }
+
+  .xpText {
+    flex-direction: column;
+    gap: 5px;
+    text-align: center;
+  }
+}

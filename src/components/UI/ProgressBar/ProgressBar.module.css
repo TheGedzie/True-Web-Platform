@@ -1,0 +1,174 @@
+.ProgressBarContainer {
+  width: 100%;
+  padding: 20px 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.ProgressBarContainer span {
+  font-size: 22px;
+  font-weight: 700;
+  color: #fff;
+  text-align: center;
+}
+
+.ProgressBar {
+  background-color: rgba(255, 255, 255, 0.12);
+  border-radius: 30px;
+  overflow: hidden;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  position: relative;
+  width: 100%;
+}
+
+.ProgressBarProgress {
+  height: 100%;
+  border-radius: 30px;
+  background: linear-gradient(90deg, #59fd7c, #10b981);
+  transition: width 0.5s ease;
+  min-width: 4px;
+  position: relative;
+}
+
+/* Эффект свечения */
+.ProgressBarProgress::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  animation: shine 2s infinite;
+  border-radius: 30px;
+}
+
+@keyframes shine {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Размеры */
+.small {
+  height: 24px;
+  max-width: 400px;
+}
+
+.medium {
+  height: 30px;
+  max-width: 600px;
+}
+
+.large {
+  height: 36px;
+  max-width: 800px;
+}
+
+/* ===== АДАПТИВ ===== */
+
+/* Планшеты */
+@media (max-width: 1024px) {
+  .ProgressBarContainer span {
+    font-size: 20px;
+  }
+
+  .small {
+    height: 22px;
+    max-width: 350px;
+  }
+
+  .medium {
+    height: 26px;
+    max-width: 500px;
+  }
+
+  .large {
+    height: 32px;
+    max-width: 650px;
+  }
+}
+
+/* Мобильные устройства */
+@media (max-width: 768px) {
+  .ProgressBarContainer {
+    padding: 15px 12px;
+    gap: 12px;
+  }
+
+  .ProgressBarContainer span {
+    font-size: 18px;
+  }
+
+  .small {
+    height: 20px;
+    max-width: 100%;
+  }
+
+  .medium {
+    height: 24px;
+    max-width: 100%;
+  }
+
+  .large {
+    height: 28px;
+    max-width: 100%;
+  }
+
+  .ProgressBar {
+    border-radius: 20px;
+    border-width: 1.5px;
+  }
+
+  .ProgressBarProgress {
+    border-radius: 20px;
+  }
+}
+
+/* Маленькие телефоны */
+@media (max-width: 480px) {
+  .ProgressBarContainer {
+    padding: 10px 10px;
+    gap: 10px;
+  }
+
+  .ProgressBarContainer span {
+    font-size: 16px;
+  }
+
+  .small {
+    height: 18px;
+  }
+
+  .medium {
+    height: 20px;
+  }
+
+  .large {
+    height: 24px;
+  }
+
+  .ProgressBar {
+    border-radius: 16px;
+    border-width: 1px;
+  }
+
+  .ProgressBarProgress {
+    border-radius: 16px;
+  }
+
+  .ProgressBarProgress::after {
+    animation: none;
+  }
+}

@@ -1,0 +1,205 @@
+.page {
+  min-height: 100vh;
+  padding: 40px 20px;
+  background: transparent;
+}
+
+.heroContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.titleContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.icon {
+  color: var(--green-text);
+}
+
+.title {
+  font-size: 52px;
+  font-weight: 700;
+}
+
+.description {
+  font-size: 18px;
+  color: var(--grey-text);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Карточка — плавная анимация */
+.card {
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(89, 253, 124, 0.25);
+  border-radius: 20px;
+  padding: 24px;
+  cursor: pointer;
+  transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  position: relative;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-6px) scale(1.01);
+  border-color: var(--green-text);
+  box-shadow: 0 12px 40px rgba(89, 253, 124, 0.15);
+  background: rgba(0, 0, 0, 0.7);
+}
+
+/* Свечение при наведении */
+.card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  background: radial-gradient(
+    circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    rgba(89, 253, 124, 0.08),
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+.card:hover::after {
+  opacity: 1;
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.difficulty {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.xpBadge {
+  font-size: 13px;
+  font-weight: 600;
+  color: #fdea59;
+  background: rgba(253, 234, 89, 0.12);
+  padding: 4px 12px;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+.card:hover .xpBadge {
+  background: rgba(253, 234, 89, 0.2);
+  transform: scale(1.05);
+}
+
+.cardTitle {
+  font-size: 20px;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 6px;
+  transition: color 0.3s ease;
+}
+
+.card:hover .cardTitle {
+  color: var(--green-text);
+}
+
+.cardCategory {
+  font-size: 14px;
+  color: var(--grey-text);
+  margin-bottom: 8px;
+}
+
+.cardDesc {
+  font-size: 14px;
+  color: #bbb;
+  line-height: 1.5;
+  margin-bottom: 16px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.cardFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.language {
+  font-size: 13px;
+  color: var(--grey-text);
+}
+
+.empty {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 60px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 20px;
+  border: 1px solid rgba(89, 253, 124, 0.15);
+}
+
+.emptyIcon {
+  color: var(--grey-text);
+  margin-bottom: 16px;
+}
+
+.empty p {
+  color: var(--grey-text);
+  font-size: 18px;
+}
+
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  font-size: 20px;
+  color: var(--green-text);
+}
+
+@media (max-width: 768px) {
+  .page {
+    padding: 20px 12px;
+  }
+
+  .title {
+    font-size: 32px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    padding: 18px;
+  }
+
+  .description {
+    font-size: 15px;
+    text-align: center;
+  }
+}

@@ -1,0 +1,99 @@
+.Title {
+  margin: 0;
+  padding: 0;
+  line-height: 1.2;
+  user-select: none;
+  word-break: break-word;
+}
+
+/* Стилизация размеров */
+.small {
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.medium {
+  font-size: 32px;
+  font-weight: 600;
+}
+
+.large {
+  font-size: 48px;
+  font-weight: 600;
+}
+
+/* Стилизация цветов */
+.white {
+  color: #ffffff;
+}
+
+.black {
+  color: #000000;
+}
+
+.green {
+  color: #59fd7c;
+}
+
+.blue {
+  color: #59d9fd;
+}
+
+.purple {
+  color: #bb59fd;
+}
+
+.red {
+  color: #fd595c;
+}
+
+.yellow {
+  color: #fdea59;
+}
+
+/* ===== АДАПТИВ ===== */
+
+/* Планшеты и ноутбуки */
+@media (max-width: 1024px) {
+  .small {
+    font-size: 20px;
+  }
+  .medium {
+    font-size: 28px;
+  }
+  .large {
+    font-size: 40px;
+  }
+}
+
+/* Мобильные устройства */
+@media (max-width: 768px) {
+  .small {
+    font-size: 18px;
+    font-weight: 500;
+  }
+  .medium {
+    font-size: 24px;
+    font-weight: 600;
+  }
+  .large {
+    font-size: 32px;
+    font-weight: 600;
+  }
+}
+
+/* Маленькие телефоны */
+@media (max-width: 480px) {
+  .small {
+    font-size: 16px;
+    font-weight: 500;
+  }
+  .medium {
+    font-size: 20px;
+    font-weight: 600;
+  }
+  .large {
+    font-size: 26px;
+    font-weight: 600;
+  }
+}

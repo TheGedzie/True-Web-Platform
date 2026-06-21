@@ -1,0 +1,357 @@
+/* Questions.module.css — полный адаптив */
+
+.page {
+  width: 100%;
+  min-height: 100vh;
+  padding: 40px 20px;
+}
+
+.heroContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.titleContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.messageCircle {
+  color: var(--green-text);
+}
+
+.title {
+  font-size: 60px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.description {
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--grey-text);
+  text-align: center;
+}
+
+.askQuestion {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 20px;
+}
+
+.askButton {
+  background: linear-gradient(135deg, #59fd7c, #10b981) !important;
+  color: var(--black);
+  font-size: 18px;
+  gap: 5px;
+  font-weight: 700;
+  border: none;
+  width: 250px;
+  height: 60px;
+}
+
+.askButton:hover {
+  transform: scale(1.05);
+  background: linear-gradient(135deg, #59fd7c, #10b981) !important;
+  box-shadow: 0 0 30px rgba(89, 253, 124, 0.6);
+}
+
+.form {
+  background: var(--bg-card);
+  backdrop-filter: blur(10px);
+  border: 2px solid var(--green-text);
+  border-radius: 20px;
+  padding: 30px;
+  width: 100%;
+  max-width: 600px;
+  position: relative;
+}
+
+.formTitle {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 5px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.SparklesIcon {
+  color: var(--green-text);
+}
+
+.input,
+.textarea {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid var(--green-text);
+  border-radius: 12px;
+  padding: 12px 16px;
+  color: white;
+  font-size: 14px;
+  margin-bottom: 16px;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+}
+
+.input:focus,
+.textarea:focus {
+  outline: none;
+  border-color: #7aff8c;
+  box-shadow: 0 0 10px var(--green-glow);
+}
+
+.textarea {
+  resize: vertical;
+  font-family: inherit;
+}
+
+.formButtons {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.formButtons button {
+  flex: 1;
+}
+
+.submitBtn {
+  background: linear-gradient(135deg, #59fd7c, #10b981) !important;
+  color: #000;
+  font-weight: 700;
+  border: none;
+  width: 100%;
+  height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-radius: 12px;
+}
+
+.submitBtn:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 20px rgba(89, 253, 124, 0.5);
+}
+
+.cancelBtn {
+  background: #374151;
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  width: 100%;
+  height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-radius: 12px;
+}
+
+.cancelBtn:hover {
+  background: #4b5563 !important;
+}
+
+.forum {
+  max-width: 70%;
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-shrink: 0;
+  gap: 30px;
+  padding: 20px 0;
+}
+
+.noQuestions {
+  text-align: center;
+  color: var(--grey-text);
+  padding: 60px;
+  font-size: 18px;
+}
+
+/* ===== АДАПТИВ ===== */
+
+/* Планшеты */
+@media (max-width: 1024px) {
+  .page {
+    padding: 30px 15px;
+  }
+
+  .title {
+    font-size: 48px;
+  }
+
+  .description {
+    font-size: 18px;
+  }
+
+  .form {
+    max-width: 500px;
+    padding: 25px;
+  }
+
+  .forum {
+    gap: 20px;
+  }
+}
+
+/* Мобильные устройства */
+@media (max-width: 768px) {
+  .page {
+    padding: 20px 12px;
+  }
+
+  .heroContainer {
+    gap: 20px;
+  }
+
+  .titleContainer {
+    gap: 8px;
+  }
+
+  .messageCircle {
+    width: 35px;
+    height: 35px;
+  }
+
+  .title {
+    font-size: 36px;
+  }
+
+  .description {
+    font-size: 16px;
+  }
+
+  .askQuestion {
+    padding: 20px 10px;
+  }
+
+  .askButton {
+    width: 200px;
+    height: 50px;
+    font-size: 16px;
+  }
+
+  .form {
+    max-width: 100%;
+    padding: 20px;
+    border-radius: 16px;
+  }
+
+  .formTitle {
+    margin-bottom: 20px;
+  }
+
+  .formTitle h3 {
+    font-size: 18px !important;
+  }
+
+  .SparklesIcon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .input,
+  .textarea {
+    padding: 10px 14px;
+    font-size: 13px;
+    border-radius: 10px;
+  }
+
+  .formButtons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .submitBtn,
+  .cancelBtn {
+    height: 44px;
+    font-size: 14px;
+  }
+
+  .forum {
+    gap: 16px;
+    padding: 10px 0;
+  }
+
+  .noQuestions {
+    padding: 40px;
+    font-size: 16px;
+  }
+}
+
+/* Маленькие телефоны */
+@media (max-width: 480px) {
+  .page {
+    padding: 15px 10px;
+  }
+
+  .title {
+    font-size: 28px;
+  }
+
+  .messageCircle {
+    width: 28px;
+    height: 28px;
+  }
+
+  .description {
+    font-size: 14px;
+  }
+
+  .askButton {
+    width: 100%;
+    max-width: 200px;
+    height: 44px;
+    font-size: 14px;
+  }
+
+  .form {
+    padding: 16px;
+    border-radius: 14px;
+  }
+
+  .formTitle h3 {
+    font-size: 16px !important;
+  }
+
+  .input,
+  .textarea {
+    padding: 8px 12px;
+    font-size: 12px;
+    border-radius: 8px;
+    margin-bottom: 12px;
+  }
+
+  .submitBtn,
+  .cancelBtn {
+    height: 38px;
+    font-size: 13px;
+    gap: 6px;
+  }
+
+  .forum {
+    gap: 12px;
+  }
+
+  .noQuestions {
+    padding: 30px 20px;
+    font-size: 14px;
+  }
+}

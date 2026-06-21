@@ -1,0 +1,1 @@
+export { RegisterAuth } from './RegisterAuth'

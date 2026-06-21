@@ -3,14 +3,44 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
+  --main-bg-color: repeating-linear-gradient(135deg,
+        rgba(30, 30, 30, 0.95) 0px,
+        rgba(30, 30, 30, 0.95) 15px,
+        rgba(45, 45, 45, 0.6) 15px,
+        rgba(45, 45, 45, 0.6) 30px);
+  color-scheme: dark;
+}
+body {
+  background: var(--main-bg-color);
 }
 
 /* @media (prefers-color-scheme: light) {
 
 } */
+/* Игровой скроллбар */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a1a0a;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #59FD7C;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #7aff8c;
+}
+
+/* Выделение текста */
+::selection {
+  background: #59FD7C;
+  color: #0a1a0a;
+}
